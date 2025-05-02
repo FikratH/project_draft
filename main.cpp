@@ -130,7 +130,7 @@ void startGameLoop(Player& player, Dungeon& dungeon) {
     bool isRunning = true;
     Utils::clearScreen();
     std::cout << "\n╔════════════════════════════╗\n";
-    std::cout << "║    THE ADVENTURE BEGINS!    ║\n";
+    std::cout << "║    THE ADVENTURE BEGINS!   ║\n";
     std::cout << "╚════════════════════════════╝\n";
     std::cout << "You enter the dungeon...\n";
     
@@ -139,7 +139,7 @@ void startGameLoop(Player& player, Dungeon& dungeon) {
     
     // Show initial instructions
     Utils::clearScreen();
-    std::cout << "\n╔════════ CONTROLS ════════╗\n";
+    std::cout << "\n╔════════ CONTROLS ═════════╗\n";
     std::cout << "║ W - Move North            ║\n";
     std::cout << "║ A - Move West             ║\n";
     std::cout << "║ S - Move South            ║\n";
@@ -165,14 +165,14 @@ void startGameLoop(Player& player, Dungeon& dungeon) {
         std::cout << "║ HP: " << player.getHP() << "/" << player.getMaxHP();
         int hpLen = std::to_string(player.getHP()).length() + std::to_string(player.getMaxHP()).length() + 1;
         for (int i = 0; i < 18 - hpLen; i++) std::cout << " ";
-        std::cout << "║\n";
-        std::cout << "╚═══════════════════════════╝\n";
+        std::cout << " ║\n";
+        std::cout << "╚════════════════════════╝\n";
         
         // Always show controls
-        std::cout << "\n╔════════ CONTROLS ════════╗\n";
+        std::cout << "\n╔════════════ CONTROLS ═══════════╗\n";
         std::cout << "║ WASD: Move | I: Item | P: Stats ║\n";
-        std::cout << "║ V: Save | Q: Quit             ║\n";
-        std::cout << "╚═══════════════════════════╝\n";
+        std::cout << "║ V: Save | Q: Quit               ║\n";
+        std::cout << "╚═════════════════════════════════╝\n";
     };
     
     // Display player info and controls
@@ -247,11 +247,11 @@ void startGameLoop(Player& player, Dungeon& dungeon) {
                 Utils::clearScreen();
                 std::cout << "\n╔════════ SAVING GAME ════════╗\n";
                 if (IO::saveGame(player, dungeon)) {
-                    std::cout << "║ Game saved successfully! ║\n";
+                    std::cout << "║   Game saved successfully!  ║\n";
                 } else {
-                    std::cout << "║ Failed to save game!    ║\n";
+                    std::cout << "║     Failed to save game!    ║\n";
                 }
-                std::cout << "╚═══════════════════════════╝\n";
+                std::cout << "╚═════════════════════════════╝\n";
                 std::cout << "Press Enter to continue...";
                 std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
                 
