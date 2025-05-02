@@ -55,7 +55,7 @@ int main() {
                 if (IO::loadGame(player, dungeon)) {
                     std::cout << "Game loaded successfully!\n";
                     startGameLoop(player, dungeon);
-                    IO::saveToLeaderboard(player);
+                    IO::saveToLeaderboard(player, dungeon);
                 } else {
                     std::cout << "Failed to load game. Returning to main menu.\n";
                 }
@@ -122,7 +122,7 @@ void startGame(Difficulty difficulty) {
     startGameLoop(player, dungeon);
     
     // After game ends, save score to leaderboard
-    IO::saveToLeaderboard(player);
+    IO::saveToLeaderboard(player, dungeon);
 }
 
 // Game loop implementation

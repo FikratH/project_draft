@@ -1,5 +1,6 @@
 #include "io.h"
 #include "utils.h"
+#include "dungeon.h"
 #include <iostream>
 #include <fstream>
 #include <sstream>
@@ -332,7 +333,7 @@ bool IO::loadGame(Player& player, Dungeon& dungeon) {
     }
 }
 
-bool IO::saveToLeaderboard(const Player& player) {
+bool IO::saveToLeaderboard(const Player& player, const Dungeon& dungeon) {
     // Read current leaderboard
     std::vector<LeaderboardEntry> entries = readLeaderboardEntries();
     
@@ -342,7 +343,7 @@ bool IO::saveToLeaderboard(const Player& player) {
     newEntry.score = player.getScore();
     newEntry.level = player.getLevel();
     newEntry.date = getCurrentDateTime();
-    newEntry.difficulty = MEDIUM; // Default if not available
+    newEntry.difficulty = dungeon.getDifficulty(); // Use dungeon parameter to get difficulty
     
     // Add new entry
     entries.push_back(newEntry);

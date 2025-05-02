@@ -26,7 +26,7 @@ public:
     static bool loadGame(Player& player, Dungeon& dungeon);
     
     // Save player score to leaderboard
-    static bool saveToLeaderboard(const Player& player);
+    static bool saveToLeaderboard(const Player& player, const Dungeon& dungeon);
     
     // Display leaderboard
     static void displayLeaderboard();
