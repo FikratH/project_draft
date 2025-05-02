@@ -1,0 +1,125 @@
+PLAYER
+Amil
+98
+100
+10
+5
+16
+1
+116
+INVENTORY
+2
+Medium Health Potion
+0
+24
+Restores a moderate amount of HP
+Medium Health Potion
+0
+24
+Restores a moderate amount of HP
+DUNGEON
+0
+10
+1
+4
+ROOMS
+4,1,0,1,0,0,0,0,0
+1,0,0,1,1,0,0,1,Troll,80,80,12,8,60,0
+0,0,0,1,1,1,0,0,0
+1,0,0,0,1,1,0,1,Troll,80,80,12,8,60,0
+1,0,0,1,0,1,0,1,Orc,48,48,9,6,32,0
+3,0,0,1,1,0,0,0,1,Greater Defense Tonic,2,7,Significantly increases defense
+3,0,0,0,1,1,0,0,1,Minor Defense Tonic,2,2,Slightly increases defense
+1,0,0,0,1,1,0,1,Skeleton,36,36,8,4,24,0
+3,0,0,1,1,1,0,0,1,Medium Health Potion,0,24,Restores a moderate amount of HP
+1,0,0,1,0,1,0,1,Goblin,24,24,6,2,16,0
+2,1,1,1,0,0,8,0,0
+3,0,1,0,0,0,0,0,1,Small Health Potion,0,12,Restores a small amount of HP
+0,0,1,1,0,0,0,0,0
+0,0,0,0,1,0,0,0,0
+3,0,1,0,0,1,0,0,1,Greater Strength Elixir,1,7,Significantly increases attack power
+2,0,1,1,0,0,17,0,0
+3,0,0,1,1,0,0,0,1,Strength Elixir,1,4,Moderately increases attack power
+1,0,0,0,1,1,0,1,Skeleton,36,36,8,4,24,0
+0,0,1,0,0,1,0,0,0
+2,0,1,1,0,0,24,0,0
+1,1,1,0,1,0,0,1,Goblin,0,24,6,2,16,0
+0,1,0,1,0,1,0,0,0
+1,0,1,0,1,0,0,1,Troll,80,80,12,8,60,0
+3,0,0,0,1,1,0,0,1,Rejuvenation Potion,3,0,Completely restores HP
+1,0,0,1,1,1,0,1,Goblin,24,24,6,2,16,0
+0,0,1,0,0,1,0,0,0
+0,0,1,1,0,0,0,0,0
+1,0,0,1,1,0,0,1,Goblin,24,24,6,2,16,0
+3,0,0,0,1,1,0,0,1,Large Health Potion,0,36,Restores a significant amount of HP
+3,0,1,0,0,1,0,0,1,Greater Strength Elixir,1,7,Significantly increases attack power
+3,1,0,1,1,0,0,0,0
+0,1,1,0,0,1,0,0,0
+3,0,0,1,1,0,0,0,1,Rejuvenation Potion,3,0,Completely restores HP
+3,0,0,1,0,1,0,0,1,Large Health Potion,0,36,Restores a significant amount of HP
+1,0,1,0,1,0,0,1,Goblin,24,24,6,2,16,0
+3,0,0,0,0,1,0,0,1,Medium Health Potion,0,24,Restores a moderate amount of HP
+3,0,1,1,0,0,0,0,1,Large Health Potion,0,36,Restores a significant amount of HP
+1,0,1,0,1,0,0,1,Troll,80,80,12,8,60,0
+1,0,0,1,0,1,0,1,Orc,48,48,9,6,32,0
+3,0,0,1,0,0,0,0,1,Defense Tonic,2,4,Moderately increases defense
+3,1,1,0,1,0,0,0,0
+0,1,0,1,0,1,0,0,0
+0,0,1,1,0,0,0,0,0
+1,0,1,0,1,0,0,1,Skeleton,36,36,8,4,24,0
+2,0,0,0,1,1,21,0,0
+0,0,0,1,0,1,0,0,0
+1,0,1,1,0,0,0,1,Dragon,160,160,20,12,120,0
+3,0,0,1,1,0,0,0,1,Small Health Potion,0,12,Restores a small amount of HP
+0,0,1,0,0,1,0,0,0
+3,0,1,1,0,0,0,0,1,Defense Tonic,2,4,Moderately increases defense
+0,0,0,1,0,0,0,0,0
+1,0,1,1,0,0,0,1,Goblin,24,24,6,2,16,0
+1,0,1,0,1,0,0,1,Goblin,24,24,6,2,16,0
+1,0,0,0,1,1,0,1,Orc,48,48,9,6,32,0
+1,0,0,1,0,1,0,1,Troll,80,80,12,8,60,0
+2,0,1,0,1,0,24,0,0
+2,0,1,0,0,1,25,0,0
+1,0,1,1,0,0,0,1,Skeleton,36,36,8,4,24,0
+3,0,0,1,1,0,0,0,1,Greater Defense Tonic,2,7,Significantly increases defense
+1,0,1,1,0,1,0,1,Dragon,160,160,20,12,120,0
+2,0,1,1,0,0,17,0,0
+3,0,1,0,1,0,0,0,1,Minor XP Scroll,4,30,Grants a small amount of XP
+0,0,0,0,1,1,0,0,0
+1,0,0,1,0,1,0,1,Skeleton,36,36,8,4,24,0
+3,0,1,1,1,0,0,0,1,Large Health Potion,0,36,Restores a significant amount of HP
+0,0,0,0,1,1,0,0,0
+3,0,0,1,0,1,0,0,1,Defense Tonic,2,4,Moderately increases defense
+0,0,1,1,0,0,0,0,0
+0,0,1,0,0,0,0,0,0
+1,0,1,1,0,0,0,1,Skeleton,36,36,8,4,24,0
+3,0,1,1,0,0,0,0,1,Small Health Potion,0,12,Restores a small amount of HP
+2,0,0,1,1,0,21,0,0
+2,0,0,1,0,1,22,0,0
+0,0,1,1,0,0,0,0,0
+3,0,1,0,0,0,0,0,1,Medium Health Potion,0,24,Restores a moderate amount of HP
+3,0,0,1,1,0,0,0,1,Medium Health Potion,0,24,Restores a moderate amount of HP
+0,0,1,0,0,1,0,0,0
+3,0,1,0,1,0,0,0,1,Large Health Potion,0,36,Restores a significant amount of HP
+1,0,0,1,0,1,0,1,Orc,48,48,9,6,32,0
+1,0,1,1,0,0,0,1,Goblin,24,24,6,2,16,0
+2,0,1,1,1,0,21,0,0
+3,0,1,0,0,1,0,0,1,Medium Health Potion,0,24,Restores a moderate amount of HP
+1,0,1,1,0,0,0,1,Goblin,24,24,6,2,16,0
+2,0,1,1,0,0,25,0,0
+1,0,0,1,1,0,0,1,Skeleton,36,36,8,4,24,0
+3,0,1,0,0,1,0,0,1,Large Health Potion,0,36,Restores a significant amount of HP
+0,0,0,1,1,0,0,0,0
+1,0,0,0,0,1,0,1,Dragon,160,160,20,12,120,0
+1,0,1,1,0,0,0,1,Goblin,24,24,6,2,16,0
+1,0,1,1,0,0,0,1,Dragon,160,160,20,12,120,0
+3,0,1,0,1,0,0,0,1,Strength Elixir,1,4,Moderately increases attack power
+2,0,0,0,0,1,24,0,0
+3,0,1,0,1,0,0,0,1,Medium Health Potion,0,24,Restores a moderate amount of HP
+3,0,1,0,1,1,0,0,1,Rejuvenation Potion,3,0,Completely restores HP
+0,0,1,0,0,1,0,0,0
+1,0,0,0,1,0,0,1,Orc,48,48,9,6,32,0
+3,0,1,0,1,1,0,0,1,Large Health Potion,0,36,Restores a significant amount of HP
+0,0,0,0,1,1,0,0,0
+1,0,1,0,1,1,0,1,Skeleton,36,36,8,4,24,0
+5,0,1,0,0,1,0,0,0

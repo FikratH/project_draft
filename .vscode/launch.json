@@ -1,0 +1,13 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "lldb",
+      "request": "launch",
+      "args": [],
+      "cwd": "/Users/fikrat/Documents/ENGG1340/project",
+      "program": "/Users/fikrat/Documents/ENGG1340/project/build/Debug/outDebug"
+    }
+  ]
+}
