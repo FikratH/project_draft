@@ -181,8 +181,8 @@ void Room::enter(Player& player) {
             case TREASURE_ROOM:
                 if (treasure) {
                     std::cout << "\033[1;32m╔══════════ REWARD ══════════╗\033[0m\n";
-                    std::cout << "\033[1;32m║💰  TREASURE FOUND!  💰║\033[0m\n";
-                    std::cout << "\033[1;32m╚═══════════════════════════╝\033[0m\n";
+                    std::cout << "\033[1;32m║     TREASURE FOUND!        ║\033[0m\n";
+                    std::cout << "\033[1;32m╚════════════════════════════╝\033[0m\n";
                 }
                 break;
                 
@@ -292,9 +292,9 @@ void Room::display() const {
     
     // Top border with north exit
     if (northOpen) {
-        std::cout << "\033[1;36m║\033[0m       \033[1;33m↑\033[0m       \033[1;36m║\033[0m\n";
+        std::cout << "\033[1;36m║\033[0m               \033[1;33m↑\033[0m                 \033[1;36m║\033[0m\n";
     } else {
-        std::cout << "\033[1;36m╠═════════════════════╣\033[0m\n";
+        std::cout << "\033[1;36m╠═════════════════════════════════╣\033[0m\n";
     }
     
     // Room interior with west and east exits
@@ -336,7 +336,7 @@ void Room::display() const {
     if (eastOpen) {
         std::cout << " \033[1;33m→\033[0m\n";
     } else {
-        std::cout << " \033[1;36m║\033[0m\n";
+        std::cout << " \033[1;36m        ║\033[0m\n";
     }
     
     // Bottom border with south exit
@@ -393,9 +393,9 @@ void Room::display() const {
             
         case TREASURE_ROOM:
             if (treasure) {
-                std::cout << "\033[1;36m║\033[0m \033[1;33mA magnificent treasure!\033[0m    \033[1;36m║\033[0m\n";
-                std::cout << "\033[1;36m║\033[0m \033[1;33mThe chest shimmers with gold\033[0m \033[1;36m║\033[0m\n";
-                std::cout << "\033[1;36m║\033[0m \033[1;33mYou're feeling lucky today!\033[0m  \033[1;36m║\033[0m\n";
+                std::cout << "\033[1;36m║\033[0m \033[1;33mA magnificent treasure!\033[0m           \033[1;36m║\033[0m\n";
+                std::cout << "\033[1;36m║\033[0m \033[1;33mThe chest shimmers with gold\033[0m      \033[1;36m║\033[0m\n";
+                std::cout << "\033[1;36m║\033[0m \033[1;33mYou're feeling lucky today!\033[0m       \033[1;36m║\033[0m\n";
             } else {
                 std::cout << "\033[1;36m║\033[0m \033[1;90mAn empty treasure chest\033[0m     \033[1;36m║\033[0m\n";
                 std::cout << "\033[1;36m║\033[0m \033[1;90mSomeone beat you to it...\033[0m   \033[1;36m║\033[0m\n";
@@ -410,9 +410,9 @@ void Room::display() const {
             break;
             
         case EXIT:
-            std::cout << "\033[1;36m║\033[0m \033[1;36mThe exit stands before you!\033[0m  \033[1;36m║\033[0m\n";
-            std::cout << "\033[1;36m║\033[0m \033[1;36mYou've conquered the dungeon\033[0m \033[1;36m║\033[0m\n";
-            std::cout << "\033[1;36m║\033[0m \033[1;36mVictory is within your grasp!\033[0m \033[1;36m║\033[0m\n";
+            std::cout << "\033[1;36m║\033[0m \033[1;36mThe exit stands before you!\033[0m      \033[1;36m║\033[0m\n";
+            std::cout << "\033[1;36m║\033[0m \033[1;36mYou've conquered the dungeon\033[0m     \033[1;36m║\033[0m\n";
+            std::cout << "\033[1;36m║\033[0m \033[1;36mVictory is within your grasp!\033[0m    \033[1;36m║\033[0m\n";
             break;
             
         case EMPTY:
@@ -423,7 +423,7 @@ void Room::display() const {
             break;
     }
     
-    std::cout << "\033[1;36m╚═════════════════════════╝\033[0m\n";
+    std::cout << "\033[1;36m╚═══════════════════════════════════╝\033[0m\n";
     
     // Show available exits in text form for clarity
     std::cout << "\nAvailable exits: ";

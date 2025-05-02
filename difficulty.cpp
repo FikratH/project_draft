@@ -3,7 +3,7 @@
 DifficultyConfig::DifficultyConfig(Difficulty diff) {
     switch (diff) {
         case EASY:
-            mapSize = 10;                   // 10x10 map
+            mapSize = 5;                   // 5x5 map
             monsterStrengthMultiplier = 0.8f; // Weaker monsters
             trapDamageMultiplier = 0.7f;      // Less damaging traps
             lootQualityMultiplier = 1.2f;     // Better loot
@@ -13,7 +13,7 @@ DifficultyConfig::DifficultyConfig(Difficulty diff) {
             break;
             
         case MEDIUM:
-            mapSize = 15;                   // 15x15 map
+            mapSize = 7;                   // 7x7 map
             monsterStrengthMultiplier = 1.0f; // Normal monsters
             trapDamageMultiplier = 1.0f;      // Normal traps
             lootQualityMultiplier = 1.0f;     // Normal loot
@@ -23,7 +23,7 @@ DifficultyConfig::DifficultyConfig(Difficulty diff) {
             break;
             
         case HARD:
-            mapSize = 20;                   // 20x20 map
+            mapSize = 10;                   // 10x10 map
             monsterStrengthMultiplier = 1.3f; // Stronger monsters
             trapDamageMultiplier = 1.5f;      // More damaging traps
             lootQualityMultiplier = 0.8f;     // Less quality loot

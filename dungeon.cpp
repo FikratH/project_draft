@@ -360,14 +360,14 @@ void Dungeon::displayCurrentRoom() const {
 
 void Dungeon::displayMap() const {
     Utils::clearScreen();
-    std::cout << "\n╔═════ DUNGEON MAP ═════╗\n";
+    std::cout << "\n╔═════ DUNGEON MAP ══════╗\n";
     std::cout << "║ Legend:                ║\n";
     std::cout << "║  🏠 (E) - Entrance     ║\n";
     std::cout << "║  🚪 (X) - Exit         ║\n";
     std::cout << "║  👤 (@) - You          ║\n";
     std::cout << "║  👹 (M) - Monster      ║\n";
     std::cout << "║  💀 (m) - Dead Monster ║\n";
-    std::cout << "║  ⚠️  (T) - Trap         ║\n";
+    std::cout << "║  ⚠️ (T) - Trap         ║\n";
     std::cout << "║  💰 ($) - Treasure     ║\n";
     std::cout << "║  📦 (o) - Empty Chest  ║\n";
     std::cout << "║  ⬜ (.) - Empty Room   ║\n";

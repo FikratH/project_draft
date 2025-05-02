@@ -36,9 +36,9 @@ int main() {
         switch (choice) {
             case 1: { // Let's start fresh
                 std::cout << "\nSelect difficulty:\n";
-                std::cout << "1. Easy (10x10 map, weaker monsters)\n";
-                std::cout << "2. Medium (15x15 map, balanced experience)\n";
-                std::cout << "3. Hard (20x20 map, stronger monsters)\n";
+                std::cout << "1. Easy (5x5 map, weaker monsters)\n";
+                std::cout << "2. Medium (7x7 map, balanced experience)\n";
+                std::cout << "3. Hard (10x10 map, stronger monsters)\n";
                 std::cout << "Enter difficulty (1-3): ";
                 int diffChoice = Utils::getValidInput(1, 3);
                 Difficulty diff = static_cast<Difficulty>(diffChoice - 1);
@@ -275,7 +275,7 @@ void startGameLoop(Player& player, Dungeon& dungeon) {
         if (player.getHP() <= 0) {
             Utils::clearScreen();
             std::cout << "\n╔════════ GAME OVER ════════╗\n";
-            std::cout << "║ You have been defeated! ║\n";
+            std::cout << "║  You have been defeated!  ║\n";
             std::cout << "╚═══════════════════════════╝\n";
             std::cout << "Final Score: " << player.getScore() << "\n";
             std::cout << "Press Enter to continue...";
@@ -286,9 +286,9 @@ void startGameLoop(Player& player, Dungeon& dungeon) {
         // Check if player has reached the exit
         if (dungeon.hasReachedExit()) {
             Utils::clearScreen();
-            std::cout << "\n╔════════ VICTORY ════════╗\n";
-            std::cout << "║ Congratulations!        ║\n";
-            std::cout << "║ You escaped the dungeon! ║\n";
+            std::cout << "\n╔═════════ VICTORY ═════════╗\n";
+            std::cout << "║ Congratulations!          ║\n";
+            std::cout << "║ You escaped the dungeon!  ║\n";
             std::cout << "╚═══════════════════════════╝\n";
             player.addScore(1000); // Bonus for completing
             std::cout << "Final Score: " << player.getScore() << "\n";
