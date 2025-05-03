@@ -362,7 +362,7 @@ void Dungeon::displayMap() const {
     Utils::clearScreen();
     std::cout << "\n╔═══════ DUNGEON MAP ══════╗\n";
     std::cout << "║ Legend:                  ║\n";
-    std::cout << "║  ⛩️ (E) - Entrance       ║\n";
+    std::cout << "║  ⛩️ (E) - Entrance        ║\n";
     std::cout << "║  🚪 (X) - Exit           ║\n";
     std::cout << "║  🎮 (Ω) - You            ║\n";
     std::cout << "║  👹 (M) - Monster        ║\n";
@@ -370,8 +370,8 @@ void Dungeon::displayMap() const {
     std::cout << "║  🪤 (T) - Trap           ║\n";
     std::cout << "║  🪙 ($) - Treasure       ║\n";
     std::cout << "║  📦 (o) - Empty Chest    ║\n";
-    std::cout << "║  🗝️(.) - Empty Room     ║\n";
-    std::cout << "║  ❓  (?) - Unexplored     ║\n";
+    std::cout << "║  🗝️  (.) - Empty Room     ║\n";
+    std::cout << "║  ❓ (?) - Unexplored     ║\n";
     std::cout << "╚══════════════════════════╝\n\n";
     
     // Print the column numbers on top

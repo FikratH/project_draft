@@ -300,7 +300,7 @@ void Room::display() const {
             }
             break;
         case TRAP_ROOM:
-            std::cout << "\033[1;36m╔═══════════⚠️ DANGER [" 
+            std::cout << "\033[1;36m╔════════════⚠️ DANGER [" 
                       << x << "," << y 
                       << "]════════════╗\033[0m\n";
             break;
@@ -317,20 +317,20 @@ void Room::display() const {
         case EXIT:
             std::cout << "\033[1;36m╔═════════════🚪 EXIT [" 
                       << x << "," << y 
-                      << "]═════════════╗\033[0m\n";
+                      << "]════════════╗\033[0m\n";
             break;
         case HEALING_ROOM:
             std::cout << "\033[1;36m╔═════════════💚 HEAL [" 
                       << x << "," << y 
-                      << "]═════════════╗\033[0m\n";
+                      << "]════════════╗\033[0m\n";
             break;
         case CHALLENGE_ROOM:
             std::cout << "\033[1;36m╔══════════🎯 CHALLENGE [" 
                       << x << "," << y 
-                      << "]═══════════╗\033[0m\n";
+                      << "]══════════╗\033[0m\n";
             break;
         case MERCHANT_ROOM:
-            std::cout << "\033[1;36m╔═════════════💵 SHOP [" 
+            std::cout << "\033[1;36m╔════════════💵 SHOP [" 
                       << x << "," << y 
                       << "]═════════════╗\033[0m\n";
             break;
@@ -382,7 +382,7 @@ void Room::display() const {
             std::cout << "\033[1;36m🚪 EXIT\033[0m       \033[1;32mΩ\033[0m";
             break;
         default:
-            std::cout << "     \033[1;32mΩ\033[0m     ";
+            std::cout << "              \033[1;32mΩ\033[0m";
     }
     
     if (eastOpen) {
@@ -393,7 +393,7 @@ void Room::display() const {
     
     // Bottom border with south exit
     if (southOpen) {
-        std::cout << "\033[1;36m║\033[0m                \033[1;33m↓\033[0m                     \033[1;36m║\033[0m\n";
+        std::cout << "\033[1;36m║\033[0m               \033[1;33m↓\033[0m                      \033[1;36m║\033[0m\n";
     } else {
         std::cout << "\033[1;36m╠══════════════════════════════════════╣\033[0m\n";
     }
@@ -432,14 +432,14 @@ void Room::display() const {
                 std::cout << "\033[1;36m║\033[0m \033[1;33mReact quickly if needed!\033[0m              \033[1;36m║\033[0m\n";
             } else {
                 std::cout << "\033[1;36m║\033[0m \033[1;33mA " << trapTypeToString() << " trap!\033[0m";
-                int trapNameSpace = std::max(0, 16 - static_cast<int>(trapTypeToString().length()));
+                int trapNameSpace = std::max(0, 29 - static_cast<int>(trapTypeToString().length()));
                 for (int i = 0; i < trapNameSpace; i++) std::cout << " ";
                 std::cout << "\033[1;36m║\033[0m\n";
                 std::cout << "\033[1;36m║\033[0m \033[1;33mIt deals " << trapDamage << " damage\033[0m";
-                int dmgSpace = std::max(0, 10 - static_cast<int>(std::to_string(trapDamage).length()));
+                int dmgSpace = std::max(0, 13 - static_cast<int>(std::to_string(trapDamage).length()));
                 for (int i = 0; i < dmgSpace; i++) std::cout << " ";
-                std::cout << "\033[1;36m║\033[0m\n";
-                std::cout << "\033[1;36m║\033[0m \033[1;33mWatch your step!\033[0m           \033[1;36m║\033[0m\n";
+                std::cout << "\033[1;36m        ║\033[0m\n";
+                std::cout << "\033[1;36m║\033[0m \033[1;33mWatch your step!\033[0m                     \033[1;36m║\033[0m\n";
             }
             break;
             
@@ -462,9 +462,9 @@ void Room::display() const {
             break;
             
         case EXIT:
-            std::cout << "\033[1;36m║\033[0m \033[1;36mThe exit stands before you!            \033[0m\033[1;36m║\033[0m\n";
-            std::cout << "\033[1;36m║\033[0m \033[1;36mYou've conquered the dungeon\033[0m           \033[1;36m║\033[0m\n";
-            std::cout << "\033[1;36m║\033[0m \033[1;36mVictory is within your grasp!\033[0m          \033[1;36m║\033[0m\n";
+            std::cout << "\033[1;36m║\033[0m \033[1;36mThe exit stands before you!          \033[0m\033[1;36m║\033[0m\n";
+            std::cout << "\033[1;36m║\033[0m \033[1;36mYou've conquered the dungeon\033[0m         \033[1;36m║\033[0m\n";
+            std::cout << "\033[1;36m║\033[0m \033[1;36mVictory is within your grasp!\033[0m        \033[1;36m║\033[0m\n";
             break;
             
         case EMPTY:
