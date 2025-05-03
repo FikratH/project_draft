@@ -362,7 +362,7 @@ void Dungeon::displayMap() const {
     Utils::clearScreen();
     std::cout << "\n╔═══════ DUNGEON MAP ══════╗\n";
     std::cout << "║ Legend:                  ║\n";
-    std::cout << "║  ⛩️ (E) - Entrance        ║\n";
+    std::cout << "║  ⛩️  (E) - Entrance       ║\n";
     std::cout << "║  🚪 (X) - Exit           ║\n";
     std::cout << "║  🎮 (Ω) - You            ║\n";
     std::cout << "║  👹 (M) - Monster        ║\n";
@@ -401,7 +401,7 @@ void Dungeon::displayMap() const {
             
             // Current position
             if (x == currentX && y == currentY) {
-                std::cout << " Ω ";
+                std::cout << "\033[32m Ω \033[0m";
             } else {
                 char mapChar = rooms[y][x]->getMapChar();
                 // Add some visual enhancement around the characters
@@ -423,7 +423,7 @@ void Dungeon::displayMap() const {
     }
     
     // Bottom walls for the last row
-    std::cout << "   ";
+    std::cout << "  ";
     for (int x = 0; x < mapSize; ++x) {
         std::cout << "+";
         std::cout << (rooms[mapSize-1][x]->isSouthOpen() ? "   " : "---");
