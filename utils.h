@@ -25,6 +25,9 @@ public:
     // Log a message with timestamp to console (and optionally to file)
     static void log(const std::string& message, bool toFile = false);
     
+    // Slow print a string to console
+    static void slowPrint(const std::string& message, int delay = 20);
+
     // Split a string by delimiter
     static std::vector<std::string> split(const std::string& s, char delimiter);
     
