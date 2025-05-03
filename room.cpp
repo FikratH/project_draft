@@ -290,63 +290,63 @@ void Room::display() const {
     switch (type) {
         case MONSTER_ROOM:
             if (monster && monster->isAlive()) {
-                std::cout << "\033[1;36m╔═════════⚔️ BATTLE [" 
+                std::cout << "\033[1;36m╔═══════════⚔️ BATTLE [" 
                           << x << "," << y 
-                          << "]═════════╗\033[0m\n";
+                          << "]═════════════╗\033[0m\n";
             } else {
-                std::cout << "\033[1;36m╔═════════💀 CLEARED [" 
+                std::cout << "\033[1;36m╔═══════════💀 CLEARED [" 
                           << x << "," << y 
-                          << "]═════════╗\033[0m\n";
+                          << "]════════════╗\033[0m\n";
             }
             break;
         case TRAP_ROOM:
-            std::cout << "\033[1;36m╔═════════⚠️ DANGER [" 
+            std::cout << "\033[1;36m╔═══════════⚠️ DANGER [" 
                       << x << "," << y 
-                      << "]═════════╗\033[0m\n";
+                      << "]════════════╗\033[0m\n";
             break;
         case TREASURE_ROOM:
-            std::cout << "\033[1;36m╔═════════💰 TREASURE [" 
+            std::cout << "\033[1;36m╔═══════════💰 TREASURE [" 
                       << x << "," << y 
-                      << "]═════════╗\033[0m\n";
+                      << "]══════════╗\033[0m\n";
             break;
         case ENTRANCE:
-            std::cout << "\033[1;36m╔═════════🏠 ENTRANCE [" 
+            std::cout << "\033[1;36m╔═══════════🏠 ENTRANCE [" 
                       << x << "," << y 
-                      << "]═════════╗\033[0m\n";
+                      << "]═══════════╗\033[0m\n";
             break;
         case EXIT:
-            std::cout << "\033[1;36m╔═════════🚪 EXIT [" 
+            std::cout << "\033[1;36m╔═════════════🚪 EXIT [" 
                       << x << "," << y 
-                      << "]═════════╗\033[0m\n";
+                      << "]═════════════╗\033[0m\n";
             break;
         case HEALING_ROOM:
-            std::cout << "\033[1;36m╔═════════💚 HEAL [" 
+            std::cout << "\033[1;36m╔═════════════💚 HEAL [" 
                       << x << "," << y 
-                      << "]═════════╗\033[0m\n";
+                      << "]═════════════╗\033[0m\n";
             break;
         case CHALLENGE_ROOM:
-            std::cout << "\033[1;36m╔═════════🎯 CHALLENGE [" 
+            std::cout << "\033[1;36m╔══════════🎯 CHALLENGE [" 
                       << x << "," << y 
-                      << "]═════════╗\033[0m\n";
+                      << "]═══════════╗\033[0m\n";
             break;
         case MERCHANT_ROOM:
-            std::cout << "\033[1;36m╔═════════💵 SHOP [" 
+            std::cout << "\033[1;36m╔═════════════💵 SHOP [" 
                       << x << "," << y 
-                      << "]═════════╗\033[0m\n";
+                      << "]═════════════╗\033[0m\n";
             break;
         default:  // EMPTY or any other
-            std::cout << "\033[1;36m╔═════════ EMPTY [" 
+            std::cout << "\033[1;36m╔═════════════ EMPTY [" 
                       << x << "," << y 
-                      << "]═════════╗\033[0m\n";
+                      << "]═════════════╗\033[0m\n";
             break;
     }
     // ————————————————————————————————
     
     // Top border with north exit
     if (northOpen) {
-        std::cout << "\033[1;36m║\033[0m               \033[1;33m↑\033[0m                 \033[1;36m║\033[0m\n";
+        std::cout << "\033[1;36m║\033[0m               \033[1;33m↑\033[0m                      \033[1;36m║\033[0m\n";
     } else {
-        std::cout << "\033[1;36m╠═════════════════════════════════╣\033[0m\n";
+        std::cout << "\033[1;36m╠══════════════════════════════════════╣\033[0m\n";
     }
     
     // Room interior with west and east exits
@@ -386,50 +386,50 @@ void Room::display() const {
     }
     
     if (eastOpen) {
-        std::cout << " \033[1;33m→\033[0m\n";
+        std::cout << " \033[1;33m→\033[0m                       \n";
     } else {
-        std::cout << " \033[1;36m        ║\033[0m\n";
+        std::cout << " \033[1;36m                     ║\033[0m\n";
     }
     
     // Bottom border with south exit
     if (southOpen) {
-        std::cout << "\033[1;36m║\033[0m       \033[1;33m↓\033[0m       \033[1;36m║\033[0m\n";
+        std::cout << "\033[1;36m║\033[0m                \033[1;33m↓\033[0m                     \033[1;36m║\033[0m\n";
     } else {
-        std::cout << "\033[1;36m╠═════════════════════╣\033[0m\n";
+        std::cout << "\033[1;36m╠══════════════════════════════════════╣\033[0m\n";
     }
     
     // Room description section
-    std::cout << "\033[1;36m║\033[0m                     \033[1;36m║\033[0m\n";
+    std::cout << "\033[1;36m║\033[0m                                      \033[1;36m║\033[0m\n";
     
     // Show room type with more descriptive text
     switch (type) {
         case MONSTER_ROOM:
             if (monster && monster->isAlive()) {
-                std::cout << "\033[1;31mA fearsome monster stands before you!\033[0m\n";
-                std::cout << "\033[1;31mPrepare for battle!\033[0m\n";
+                std::cout << "\033[1;36m║\033[0m" << "\033[1;31m A fearsome monster stands before you!\033[0m" << "\033[1;36m║\033[0m\n";
+                std::cout << "\033[1;36m║\033[0m"  << "\033[1;31m Prepare for battle!                  \033[0m" << "\033[1;36m║\033[0m\n"  ;
                 std::cout << "\033[1;36m║\033[0m \033[1;31mA " << monster->getName() << "\033[0m";
                 // Calculate remaining space
-                int monsterNameSpace = std::max(0, 20 - static_cast<int>(monster->getName().length()));
+                int monsterNameSpace = std::max(0, 35 - static_cast<int>(monster->getName().length()));
                 for (int i = 0; i < monsterNameSpace; i++) std::cout << " ";
                 std::cout << "\033[1;36m║\033[0m\n";
-                std::cout << "\033[1;36m║\033[0m \033[1;31mIt looks dangerous!\033[0m        \033[1;36m║\033[0m\n";
-                std::cout << "\033[1;36m║\033[0m \033[1;31mPrepare for battle...\033[0m      \033[1;36m║\033[0m\n";
+                std::cout << "\033[1;36m║\033[0m \033[1;31mIt looks dangerous!\033[0m                  \033[1;36m║\033[0m\n";
+                std::cout << "\033[1;36m║\033[0m \033[1;31mPrepare for battle...\033[0m                \033[1;36m║\033[0m\n";
             } else {
-                std::cout << "\033[1;36m║\033[0m \033[1;90mYou've defeated the\033[0m       \033[1;36m║\033[0m\n";
+                std::cout << "\033[1;36m║\033[0m \033[1;90mYou've defeated the\033[0m                  \033[1;36m║\033[0m\n";
                 std::cout << "\033[1;36m║\033[0m \033[1;90m" << monster->getName() << "\033[0m";
                 // Calculate remaining space
-                int monsterNameSpace = std::max(0, 21 - static_cast<int>(monster->getName().length()));
+                int monsterNameSpace = std::max(0, 36 - static_cast<int>(monster->getName().length()));
                 for (int i = 0; i < monsterNameSpace; i++) std::cout << " ";
                 std::cout << "\033[1;36m║\033[0m\n";
-                std::cout << "\033[1;36m║\033[0m \033[1;90mWell done, adventurer!\033[0m     \033[1;36m║\033[0m\n";
+                std::cout << "\033[1;36m║\033[0m \033[1;90mWell done, adventurer!\033[0m               \033[1;36m║\033[0m\n";
             }
             break;
             
         case TRAP_ROOM:
             if (!visited) {
-                std::cout << "\033[1;36m║\033[0m \033[1;33mThis room feels dangerous...\033[0m \033[1;36m║\033[0m\n";
-                std::cout << "\033[1;36m║\033[0m \033[1;33mBe on your guard!\033[0m          \033[1;36m║\033[0m\n";
-                std::cout << "\033[1;36m║\033[0m \033[1;33mReact quickly if needed!\033[0m    \033[1;36m║\033[0m\n";
+                std::cout << "\033[1;36m║\033[0m \033[1;33mThis room feels dangerous...\033[0m          \033[1;36m║\033[0m\n";
+                std::cout << "\033[1;36m║\033[0m \033[1;33mBe on your guard!\033[0m                     \033[1;36m║\033[0m\n";
+                std::cout << "\033[1;36m║\033[0m \033[1;33mReact quickly if needed!\033[0m              \033[1;36m║\033[0m\n";
             } else {
                 std::cout << "\033[1;36m║\033[0m \033[1;33mA " << trapTypeToString() << " trap!\033[0m";
                 int trapNameSpace = std::max(0, 16 - static_cast<int>(trapTypeToString().length()));
@@ -445,37 +445,37 @@ void Room::display() const {
             
         case TREASURE_ROOM:
             if (treasure) {
-                std::cout << "\033[1;36m║\033[0m \033[1;33mA magnificent treasure!\033[0m           \033[1;36m║\033[0m\n";
-                std::cout << "\033[1;36m║\033[0m \033[1;33mThe chest shimmers with gold\033[0m      \033[1;36m║\033[0m\n";
-                std::cout << "\033[1;36m║\033[0m \033[1;33mYou're feeling lucky today!\033[0m       \033[1;36m║\033[0m\n";
+                std::cout << "\033[1;36m║\033[0m \033[1;33mA magnificent treasure!\033[0m              \033[1;36m║\033[0m\n";
+                std::cout << "\033[1;36m║\033[0m \033[1;33mThe chest shimmers with gold\033[0m         \033[1;36m║\033[0m\n";
+                std::cout << "\033[1;36m║\033[0m \033[1;33mYou're feeling lucky today!\033[0m          \033[1;36m║\033[0m\n";
             } else {
-                std::cout << "\033[1;36m║\033[0m \033[1;90mAn empty treasure chest\033[0m     \033[1;36m║\033[0m\n";
-                std::cout << "\033[1;36m║\033[0m \033[1;90mSomeone beat you to it...\033[0m   \033[1;36m║\033[0m\n";
-                std::cout << "\033[1;36m║\033[0m \033[1;90mBetter luck next time!\033[0m      \033[1;36m║\033[0m\n";
+                std::cout << "\033[1;36m║\033[0m \033[1;90mAn empty treasure chest\033[0m            \033[1;36m║\033[0m\n";
+                std::cout << "\033[1;36m║\033[0m \033[1;90mSomeone beat you to it...\033[0m          \033[1;36m║\033[0m\n";
+                std::cout << "\033[1;36m║\033[0m \033[1;90mBetter luck next time!\033[0m             \033[1;36m║\033[0m\n";
             }
             break;
             
         case ENTRANCE:
-            std::cout << "\033[1;36m║\033[0m \033[1;32mWelcome to the dungeon!\033[0m     \033[1;36m║\033[0m\n";
-            std::cout << "\033[1;36m║\033[0m \033[1;32mThe entrance sealed behind\033[0m  \033[1;36m║\033[0m\n";
-            std::cout << "\033[1;36m║\033[0m \033[1;32myou. Find the exit to escape!\033[0m\033[1;36m║\033[0m\n";
+            std::cout << "\033[1;36m║\033[0m \033[1;32mWelcome to the dungeon!\033[0m                \033[1;36m║\033[0m\n";
+            std::cout << "\033[1;36m║\033[0m \033[1;32mThe entrance sealed behind\033[0m             \033[1;36m║\033[0m\n";
+            std::cout << "\033[1;36m║\033[0m \033[1;32myou. Find the exit to escape!\033[0m          \033[1;36m║\033[0m\n";
             break;
             
         case EXIT:
-            std::cout << "\033[1;36m║\033[0m \033[1;36mThe exit stands before you!\033[0m      \033[1;36m║\033[0m\n";
-            std::cout << "\033[1;36m║\033[0m \033[1;36mYou've conquered the dungeon\033[0m     \033[1;36m║\033[0m\n";
-            std::cout << "\033[1;36m║\033[0m \033[1;36mVictory is within your grasp!\033[0m    \033[1;36m║\033[0m\n";
+            std::cout << "\033[1;36m║\033[0m \033[1;36mThe exit stands before you!            \033[0m\033[1;36m║\033[0m\n";
+            std::cout << "\033[1;36m║\033[0m \033[1;36mYou've conquered the dungeon\033[0m           \033[1;36m║\033[0m\n";
+            std::cout << "\033[1;36m║\033[0m \033[1;36mVictory is within your grasp!\033[0m          \033[1;36m║\033[0m\n";
             break;
             
         case EMPTY:
         default:
-            std::cout << "\033[1;36m║\033[0m Nothing of interest here.    \033[1;36m║\033[0m\n";
-            std::cout << "\033[1;36m║\033[0m Just an empty chamber with   \033[1;36m║\033[0m\n";
-            std::cout << "\033[1;36m║\033[0m stone walls and silence.     \033[1;36m║\033[0m\n";
+            std::cout << "\033[1;36m║\033[0m Nothing of interest here.            \033[1;36m║\033[0m\n";
+            std::cout << "\033[1;36m║\033[0m Just an empty chamber with           \033[1;36m║\033[0m\n";
+            std::cout << "\033[1;36m║\033[0m stone walls and silence.             \033[1;36m║\033[0m\n";
             break;
     }
     
-    std::cout << "\033[1;36m╚═══════════════════════════════════╝\033[0m\n";
+    std::cout << "\033[1;36m╚══════════════════════════════════════╝\033[0m\n";
     
     // Show available exits in text form for clarity
     std::cout << "\nAvailable exits: ";
