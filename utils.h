@@ -26,7 +26,7 @@ public:
     static void log(const std::string& message, bool toFile = false);
     
     // Slow print a string to console
-    static void slowPrint(const std::string& message, int delay = 20);
+    static void slowPrint(const std::string& message, int delayMs);
 
     // Split a string by delimiter
     static std::vector<std::string> split(const std::string& s, char delimiter);

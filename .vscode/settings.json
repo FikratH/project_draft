@@ -100,11 +100,18 @@
     "variant": "cpp",
     "vector": "cpp",
     "memory": "cpp",
+    "ostream": "cpp",
+    "__threading_support": "cpp",
+    "cstddef": "cpp",
     "__hash_table": "cpp",
     "__node_handle": "cpp",
+    "complex": "cpp",
     "deque": "cpp",
+    "fstream": "cpp",
+    "iomanip": "cpp",
     "queue": "cpp",
-    "stack": "cpp"
+    "stack": "cpp",
+    "tuple": "cpp"
   },
   "C_Cpp.errorSquiggles": "disabled"
 }

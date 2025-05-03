@@ -95,9 +95,9 @@ void Utils::log(const std::string &message, bool toFile)
     }
 }
 
-void slowPrint(const std::string &text, int delayMs = 20)
+void Utils::slowPrint(const std::string& message, int delayMs)
 {
-    for (char c : text)
+    for (char c : message)
     {
         std::cout << c << std::flush;
         std::this_thread::sleep_for(std::chrono::milliseconds(delayMs));
