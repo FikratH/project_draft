@@ -375,7 +375,7 @@ void Dungeon::displayMap() const {
     std::cout << "╚════════════════════════╝\n\n";
     
     // Print the column numbers on top
-    std::cout << "  "; // Space for row numbers
+    std::cout << "  "; // Space for row number
     for (int x = 0; x < mapSize; ++x) {
         std::cout << "  " << x << " ";
     }
