@@ -439,8 +439,8 @@ void Dungeon::displayMap() const {
     
     // Player stats summary at the bottom of the map
     std::cout << "╔═════ PLAYER STATUS ═════╗\n";
-    std::cout << "║ Position: (" << currentX << "," << currentY << ")       ║\n";
-    std::cout << "╚═══════════════════════════╝\n";
+    std::cout << "║ Position: (" << currentX << "," << currentY << ")         ║\n";
+    std::cout << "╚═════════════════════════╝\n";
 }
 
 bool Dungeon::hasReachedExit() const {
