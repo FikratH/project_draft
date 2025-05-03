@@ -286,48 +286,15 @@ void Room::display() const {
     }
     
     // Display room banner with coordinates and room type
-    // Calculate total length for a consistent box size
-    std::string coordStr = " [" + std::to_string(x) + "," + std::to_string(y) + "]";
-    std::string titleText = roomEmoji + roomName + coordStr;
-    int titleLength = titleText.length();
-    
-    // Set fixed box width and calculate paddings
-    const int boxWidth = 35; // Fixed width for consistency
-    int totalBorderChars = boxWidth - titleLength;
-    int leftPadding = totalBorderChars / 2;
-    int rightPadding = totalBorderChars - leftPadding;
-    
-    // Print top border with title
-    std::cout << "\n\033[1;36m╔";
-    for (int i = 0; i < leftPadding; i++) {
-        std::cout << "═";
-    }
-    std::cout << titleText;
-    for (int i = 0; i < rightPadding; i++) {
-        std::cout << "═";
-    }
-    std::cout << "╗\033[0m\n";
+    /*std::cout << "\n\033[1;36m╔═════════" << roomEmoji << roomName;
+    std::cout << " [" << x << "," << y << "]";
+    std::cout << "═════════╗\033[0m\n";*/
     
     // Top border with north exit
     if (northOpen) {
-        // Calculate center position for arrow
-        int arrowPos = boxWidth / 2;
-        std::cout << "\033[1;36m║\033[0m";
-        for (int i = 0; i < arrowPos - 1; i++) {
-            std::cout << " ";
-        }
-        std::cout << "\033[1;33m↑\033[0m";
-        for (int i = 0; i < boxWidth - arrowPos; i++) {
-            std::cout << " ";
-        }
-        std::cout << "\033[1;36m║\033[0m\n";
+        std::cout << "\033[1;36m║\033[0m               \033[1;33m↑\033[0m                 \033[1;36m║\033[0m\n";
     } else {
-        // Draw a full middle border
-        std::cout << "\033[1;36m╠";
-        for (int i = 0; i < boxWidth; i++) {
-            std::cout << "═";
-        }
-        std::cout << "\033[1;36m╣\033[0m\n";
+        std::cout << "\033[1;36m╠═════════════════════════════════╣\033[0m\n";
     }
     
     // Room interior with west and east exits
@@ -341,107 +308,53 @@ void Room::display() const {
     switch (type) {
         case MONSTER_ROOM:
             if (monster && monster->isAlive()) {
-                std::cout << "\033[1;31m👹 MONSTER\033[0m    \033[1;32m♖\033[0m";
+                std::cout << "\033[1;31m👹 MONSTER\033[0m    \033[1;32mΩ\033[0m";
             } else {
-                std::cout << "\033[1;90m💀 DEFEATED\033[0m   \033[1;32m♖\033[0m";
+                std::cout << "\033[1;90m💀 DEFEATED\033[0m   \033[1;32mΩ\033[0m";
             }
             break;
         case TRAP_ROOM:
-            std::cout << "\033[1;33m⚠️ TRAP\033[0m       \033[1;32m♖\033[0m";
+            std::cout << "\033[1;33m⚠️ TRAP\033[0m       \033[1;32mΩ\033[0m";
             break;
         case TREASURE_ROOM:
             if (treasure) {
-                std::cout << "\033[1;33m*$* TREASURE\033[0m   \033[1;32m♖\033[0m";
+                std::cout << "\033[1;33m💰 GOLD\033[0m       \033[1;32mΩ\033[0m";
             } else {
-                std::cout << "\033[1;90m[-] EMPTY\033[0m      \033[1;32m♖\033[0m";
+                std::cout << "\033[1;90m📦 EMPTY\033[0m      \033[1;32mΩ\033[0m";
             }
             break;
         case ENTRANCE:
-            std::cout << "\033[1;32m🏠 START\033[0m      \033[1;32m♖\033[0m";
+            std::cout << "\033[1;32m🏠 START\033[0m      \033[1;32mΩ\033[0m";
             break;
         case EXIT:
-            std::cout << "\033[1;36m🚪 EXIT\033[0m       \033[1;32m♖\033[0m";
+            std::cout << "\033[1;36m🚪 EXIT\033[0m       \033[1;32mΩ\033[0m";
             break;
         default:
-            std::cout << "     \033[1;32m♖\033[0m     ";
+            std::cout << "     \033[1;32mΩ\033[0m     ";
     }
     
-    // Make sure the east border aligns properly with a clean single line
     if (eastOpen) {
-        // Calculate space needed to reach the correct position
-        int contentWidth = 15; // Approximate width of content already displayed
-        int spacesNeeded = boxWidth - contentWidth - 1; // -1 for the arrow
-        
-        // Add spaces to position arrow at the correct spot
-        for (int i = 0; i < spacesNeeded; i++) {
-            std::cout << " ";
-        }
-        // Place the arrow, then the border in the same line
-        std::cout << "\033[1;33m>\033[0m\033[1;36m║\033[0m\n";
+        std::cout << " \033[1;33m→\033[0m\n";
     } else {
-        // Calculate remaining spaces needed to reach the right border
-        int contentWidth = 15; // Approximate width of content already displayed
-        int spacesNeeded = boxWidth - contentWidth;
-        
-        // Fill with spaces then place the border
-        for (int i = 0; i < spacesNeeded; i++) {
-            std::cout << " ";
-        }
-        std::cout << "\033[1;36m║\033[0m\n";
+        std::cout << " \033[1;36m        ║\033[0m\n";
     }
     
     // Bottom border with south exit
     if (southOpen) {
-        // Calculate center position for arrow
-        int arrowPos = boxWidth / 2;
-        std::cout << "\033[1;36m║\033[0m";
-        for (int i = 0; i < arrowPos - 1; i++) {
-            std::cout << " ";
-        }
-        std::cout << "\033[1;33m↓\033[0m";
-        for (int i = 0; i < boxWidth - arrowPos; i++) {
-            std::cout << " ";
-        }
-        std::cout << "\033[1;36m║\033[0m\n";
+        std::cout << "\033[1;36m║\033[0m       \033[1;33m↓\033[0m       \033[1;36m║\033[0m\n";
     } else {
-        // Draw consistent middle border
-        std::cout << "\033[1;36m╠";
-        for (int i = 0; i < boxWidth; i++) {
-            std::cout << "═";
-        }
-        std::cout << "\033[1;36m╣\033[0m\n";
+        std::cout << "\033[1;36m╠═════════════════════╣\033[0m\n";
     }
     
-    // Room description section with proper width
-    std::cout << "\033[1;36m║\033[0m";
-    for (int i = 0; i < boxWidth; i++) {
-        std::cout << " ";
-    }
-    std::cout << "\033[1;36m║\033[0m\n";
+    // Room description section
+    std::cout << "\033[1;36m║\033[0m                     \033[1;36m║\033[0m\n";
     
     // Show room type with more descriptive text
     switch (type) {
         case MONSTER_ROOM:
             if (monster && monster->isAlive()) {
-                // Center-aligned text with proper borders
-                std::string line1 = "A fearsome monster stands before you!";
-                std::string line2 = "Prepare for battle!";
-                
-                // Display line 1 with proper borders
-                std::cout << "\033[1;36m║\033[0m \033[1;31m" << line1 << "\033[0m";
-                int spaces1 = boxWidth - line1.length() - 1;
-                for (int i = 0; i < spaces1; i++) {
-                    std::cout << " ";
-                }
-                std::cout << "\033[1;36m║\033[0m\n";
-                
-                // Display line 2 with proper borders
-                std::cout << "\033[1;36m║\033[0m \033[1;31m" << line2 << "\033[0m";
-                int spaces2 = boxWidth - line2.length() - 1;
-                for (int i = 0; i < spaces2; i++) {
-                    std::cout << " ";
-                }
-                std::cout << "\033[1;36m║\033[0m\n";
+                std::cout << "\033[1;31mA fearsome monster stands before you!\033[0m\n";
+                std::cout << "\033[1;31mPrepare for battle!\033[0m\n";
                 std::cout << "\033[1;36m║\033[0m \033[1;31mA " << monster->getName() << "\033[0m";
                 // Calculate remaining space
                 int monsterNameSpace = std::max(0, 20 - static_cast<int>(monster->getName().length()));
@@ -474,27 +387,15 @@ void Room::display() const {
                 int dmgSpace = std::max(0, 10 - static_cast<int>(std::to_string(trapDamage).length()));
                 for (int i = 0; i < dmgSpace; i++) std::cout << " ";
                 std::cout << "\033[1;36m║\033[0m\n";
-                std::cout << "\033[1;36m║\033[0m \033[1;33mWatch your step!\033[0m           \033[1;36m║\033[0m\n"; //ruma
+                std::cout << "\033[1;36m║\033[0m \033[1;33mWatch your step!\033[0m           \033[1;36m║\033[0m\n";
             }
             break;
             
         case TREASURE_ROOM:
             if (treasure) {
-                // Treasure room description with special characters instead of emojis
-                std::cout << "\033[1;36m║\033[0m \033[1;33mA magnificent treasure!\033[0m";
-                int spaces1 = boxWidth - 23;
-                for (int i = 0; i < spaces1; i++) std::cout << " ";
-                std::cout << "\033[1;36m║\033[0m\n";
-                
-                std::cout << "\033[1;36m║\033[0m \033[1;33mThe chest shimmers with gold\033[0m";
-                int spaces2 = boxWidth - 29;
-                for (int i = 0; i < spaces2; i++) std::cout << " ";
-                std::cout << "\033[1;36m║\033[0m\n";
-                
-                std::cout << "\033[1;36m║\033[0m \033[1;33mYou're feeling lucky today!\033[0m";
-                int spaces3 = boxWidth - 28;
-                for (int i = 0; i < spaces3; i++) std::cout << " ";
-                std::cout << "\033[1;36m║\033[0m\n";
+                std::cout << "\033[1;36m║\033[0m \033[1;33mA magnificent treasure!\033[0m           \033[1;36m║\033[0m\n";
+                std::cout << "\033[1;36m║\033[0m \033[1;33mThe chest shimmers with gold\033[0m      \033[1;36m║\033[0m\n";
+                std::cout << "\033[1;36m║\033[0m \033[1;33mYou're feeling lucky today!\033[0m       \033[1;36m║\033[0m\n";
             } else {
                 std::cout << "\033[1;36m║\033[0m \033[1;90mAn empty treasure chest\033[0m     \033[1;36m║\033[0m\n";
                 std::cout << "\033[1;36m║\033[0m \033[1;90mSomeone beat you to it...\033[0m   \033[1;36m║\033[0m\n";
@@ -522,12 +423,7 @@ void Room::display() const {
             break;
     }
     
-    // Bottom border with consistent width
-    std::cout << "\033[1;36m╚";
-    for (int i = 0; i < boxWidth; i++) {
-        std::cout << "═";
-    }
-    std::cout << "╝\033[0m\n";
+    std::cout << "\033[1;36m╚═══════════════════════════════════╝\033[0m\n";
     
     // Show available exits in text form for clarity
     std::cout << "\nAvailable exits: ";
