@@ -367,7 +367,7 @@ void Dungeon::displayMap() const {
     std::cout << "║  👤 (@) - You          ║\n";
     std::cout << "║  👹 (M) - Monster      ║\n";
     std::cout << "║  💀 (m) - Dead Monster ║\n";
-    std::cout << "║  ⚠️ (T) - Trap         ║\n";
+    std::cout << "║  ⚠️  (T) - Trap         ║\n";
     std::cout << "║  💰 ($) - Treasure     ║\n";
     std::cout << "║  📦 (o) - Empty Chest  ║\n";
     std::cout << "║  ⬜ (.) - Empty Room   ║\n";
