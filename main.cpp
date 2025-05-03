@@ -14,6 +14,9 @@ void startGame(Difficulty difficulty);
 
 int main() {
     // Splash screen - gotta look cool, right?
+    Utils::slowVerticalPrint("                                                              ");
+    Utils::slowVerticalPrint("                                                              ");
+    Utils::slowVerticalPrint("                                                              ");
     Utils::slowVerticalPrint("    [1;38;5;196m ██████╗ ██╗   ██╗███╗   ██  ██████╗ ███████╗ ██████╗ ███╗   ██╗[0m");
     Utils::slowVerticalPrint("    [1;38;5;196m ██╔══██╗██║   ██║████╗  ██ ██╔════╝ ██╔════╝██╔═══██╗████╗  ██║[0m");
     Utils::slowVerticalPrint("    [1;38;5;196m ██║  ██║██║   ██║██╔██╗ ██║██║  ███╗█████╗  ██║   ██║██╔██╗ ██║[0m");
@@ -51,9 +54,7 @@ int main() {
         std::cout << "│   4   │";std::cout << "  EXIT\n";
         std::cout << "╰───────╯\n";
         std::cout<<std::endl;
-        std::cout << "\033[38;2;150;50;255m Enter your choice (1-4): \033[0m" << std::endl;
-        std::cout<<std::endl;
-        // aaa
+        std::cout << "\033[38;2;150;50;255m Enter your choice (1-4): \033[0m";
         choice = Utils::getValidInput(1, 4);
 
         switch (choice) {
