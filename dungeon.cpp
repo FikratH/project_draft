@@ -375,15 +375,15 @@ void Dungeon::displayMap() const {
     std::cout << "╚════════════════════════╝\n\n";
     
     // Print the column numbers on top
-    std::cout << "    "; // Align column numbers
+    std::cout << "  "; // Space for row numbers
     for (int x = 0; x < mapSize; ++x) {
-        std::cout << " " << x << " ";
+        std::cout << "  " << x << " ";
     }
     std::cout << "\n";
     
     for (int y = 0; y < mapSize; ++y) {
-        // Print row number
-        std::cout << " " << y << " ";
+        // Start with top walls (no row number here)
+        std::cout << "  ";
         
         // Top walls
         for (int x = 0; x < mapSize; ++x) {
@@ -392,8 +392,8 @@ void Dungeon::displayMap() const {
         }
         std::cout << "+\n";
         
-        // Row number again
-        std::cout << " " << y << " ";
+        // Print row number before content
+        std::cout << y << " ";
         
         // Room contents and side walls
         for (int x = 0; x < mapSize; ++x) {
@@ -431,16 +431,16 @@ void Dungeon::displayMap() const {
     std::cout << "+\n";
     
     // Print the column numbers on bottom
-    std::cout << "   ";
+    std::cout << "  ";
     for (int x = 0; x < mapSize; ++x) {
-        std::cout << " " << (x % 10) << " ";
+        std::cout << "  " << x << " ";
     }
     std::cout << "\n\n";
     
     // Player stats summary at the bottom of the map
     std::cout << "╔═════ PLAYER STATUS ═════╗\n";
-    std::cout << "║ Position: (" << currentX << "," << currentY << ")       ║\n";
-    std::cout << "╚═══════════════════════════╝\n";
+    std::cout << "║ Position: (" << currentX << "," << currentY << ")         ║\n";
+    std::cout << "╚═════════════════════════╝\n";
 }
 
 bool Dungeon::hasReachedExit() const {

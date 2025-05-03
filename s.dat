@@ -1,0 +1,42 @@
+PLAYER
+s
+119
+120
+25
+15
+16
+1
+16
+INVENTORY
+0
+DUNGEON
+0
+5
+1
+1
+ROOMS
+4,1,0,1,0,0,0,0,0
+3,0,0,1,1,0,0,0,1,Minor Defense Tonic,2,2,Slightly increases defense
+1,0,0,0,1,1,0,1,Dragon,160,160,20,12,120,0
+2,0,0,0,1,1,11,0,0
+1,0,0,1,0,1,0,1,Goblin,24,24,6,2,16,0
+1,1,1,0,1,0,0,1,Goblin,0,24,6,2,16,0
+7,1,1,0,0,1,0,0,0
+7,0,0,1,1,0,0,0,0
+6,0,0,0,1,1,0,0,0
+3,0,1,0,0,1,0,0,1,Strength Elixir,1,4,Moderately increases attack power
+2,0,0,1,1,0,10,0,0
+2,0,0,0,1,1,11,0,0
+3,0,1,0,0,1,0,0,1,Greater Strength Elixir,1,7,Significantly increases attack power
+2,0,0,1,1,0,15,0,0
+0,0,0,1,0,1,0,0,0
+3,0,1,0,1,0,0,0,1,Small Health Potion,0,12,Restores a small amount of HP
+8,0,0,1,0,1,0,0,0
+0,0,0,1,1,0,0,0,0
+1,0,1,0,0,1,0,1,Skeleton,36,36,8,4,24,0
+3,0,1,1,0,0,0,0,1,Large Health Potion,0,36,Restores a significant amount of HP
+1,0,0,0,1,0,0,1,Skeleton,36,36,8,4,24,0
+3,0,1,0,1,1,0,0,1,Small Health Potion,0,12,Restores a small amount of HP
+1,0,1,0,0,1,0,1,Troll,80,80,12,8,60,0
+1,0,0,0,1,0,0,1,Orc,48,48,9,6,32,0
+5,0,1,0,0,1,0,0,0
