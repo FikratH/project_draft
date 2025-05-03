@@ -308,29 +308,29 @@ void Room::display() const {
     switch (type) {
         case MONSTER_ROOM:
             if (monster && monster->isAlive()) {
-                std::cout << "\033[1;31m👹 MONSTER\033[0m    \033[1;32m♖\033[0m";
+                std::cout << "\033[1;31m👹 MONSTER\033[0m    \033[1;32mΩ\033[0m";
             } else {
-                std::cout << "\033[1;90m💀 DEFEATED\033[0m   \033[1;32m♖\033[0m";
+                std::cout << "\033[1;90m💀 DEFEATED\033[0m   \033[1;32mΩ\033[0m";
             }
             break;
         case TRAP_ROOM:
-            std::cout << "\033[1;33m⚠️ TRAP\033[0m       \033[1;32m♖\033[0m";
+            std::cout << "\033[1;33m⚠️ TRAP\033[0m       \033[1;32mΩ\033[0m";
             break;
         case TREASURE_ROOM:
             if (treasure) {
-                std::cout << "\033[1;33m💰 GOLD\033[0m       \033[1;32m♖\033[0m";
+                std::cout << "\033[1;33m💰 GOLD\033[0m       \033[1;32mΩ\033[0m";
             } else {
-                std::cout << "\033[1;90m📦 EMPTY\033[0m      \033[1;32m♖\033[0m";
+                std::cout << "\033[1;90m📦 EMPTY\033[0m      \033[1;32mΩ\033[0m";
             }
             break;
         case ENTRANCE:
-            std::cout << "\033[1;32m🏠 START\033[0m      \033[1;32m♖\033[0m";
+            std::cout << "\033[1;32m🏠 START\033[0m      \033[1;32mΩ\033[0m";
             break;
         case EXIT:
-            std::cout << "\033[1;36m🚪 EXIT\033[0m       \033[1;32m♖\033[0m";
+            std::cout << "\033[1;36m🚪 EXIT\033[0m       \033[1;32mΩ\033[0m";
             break;
         default:
-            std::cout << "     \033[1;32m♖\033[0m     ";
+            std::cout << "     \033[1;32mΩ\033[0m     ";
     }
     
     if (eastOpen) {
