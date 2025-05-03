@@ -428,7 +428,7 @@ void Room::display() const
         }
         break;
     case TRAP_ROOM:
-        std::cout << "\033[1;33m⚠️ TRAP\033[0m           \033[1;32mΩ\033[0m";
+        std::cout << "\033[1;33m⚠️ TRAP\033[0m            \033[1;32mΩ\033[0m";
         break;
     case TREASURE_ROOM:
         if (treasure)
