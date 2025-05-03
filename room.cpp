@@ -474,7 +474,7 @@ void Room::display() const {
                 int dmgSpace = std::max(0, 10 - static_cast<int>(std::to_string(trapDamage).length()));
                 for (int i = 0; i < dmgSpace; i++) std::cout << " ";
                 std::cout << "\033[1;36m║\033[0m\n";
-                std::cout << "\033[1;36m║\033[0m \033[1;33mWatch your step!\033[0m           \033[1;36m║\033[0m\n";
+                std::cout << "\033[1;36m║\033[0m \033[1;33mWatch your step!\033[0m           \033[1;36m║\033[0m\n"; //ruma
             }
             break;
             
