@@ -9,9 +9,24 @@ class Dungeon {
 public:
     // Constructor
     Dungeon(Difficulty difficulty);
+    // Constructor for loading from save (skips maze generation) with a custom map size
+    Dungeon(Difficulty difficulty, bool loadFromSave, int mapSize);
+    // Constructor for loading from save (skips maze generation)
+    Dungeon(Difficulty difficulty, bool loadFromSave);
     
+    // Move constructor
+    Dungeon(Dungeon&& other) noexcept;
+    // Move assignment operator
+    Dungeon& operator=(Dungeon&& other) noexcept;
+    // Disable copy operations
+    Dungeon(const Dungeon&) = delete;
+    Dungeon& operator=(const Dungeon&) = delete;
+
     // Destructor
     ~Dungeon();
+    
+    // Replace this dungeon's data with another's (move) — used by IO::loadGame
+    void replaceWith(Dungeon&& other);
     
     // Initialize the dungeon with rooms
     void initialize();

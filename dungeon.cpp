@@ -15,6 +15,60 @@ Dungeon::Dungeon(Difficulty difficulty)
     initialize();
 }
 
+Dungeon::Dungeon(Difficulty difficulty, bool loadFromSave)
+    : difficulty(difficulty), diffConfig(difficulty) {
+    mapSize = diffConfig.getMapSize();
+    currentX = 0;
+    currentY = 0;
+    rooms.resize(mapSize, std::vector<Room*>(mapSize, nullptr));
+    for (int y = 0; y < mapSize; ++y) {
+        for (int x = 0; x < mapSize; ++x) {
+            rooms[y][x] = new Room(x, y);
+        }
+    }
+}
+
+Dungeon::Dungeon(Difficulty difficulty, bool loadFromSave, int mapSizeParam)
+    : difficulty(difficulty), diffConfig(difficulty), mapSize(mapSizeParam), currentX(0), currentY(0) {
+    rooms.resize(mapSize, std::vector<Room*>(mapSize, nullptr));
+    for (int y = 0; y < mapSize; ++y) {
+        for (int x = 0; x < mapSize; ++x) {
+            rooms[y][x] = new Room(x, y);
+        }
+    }
+}
+
+Dungeon::Dungeon(Dungeon&& other) noexcept
+    : difficulty(other.difficulty), diffConfig(other.diffConfig), mapSize(other.mapSize),
+      currentX(other.currentX), currentY(other.currentY), rooms(std::move(other.rooms)) {
+    other.mapSize = 0;
+    other.currentX = other.currentY = 0;
+}
+
+Dungeon& Dungeon::operator=(Dungeon&& other) noexcept {
+    if (this != &other) {
+        // Clean up existing rooms
+        for (auto& row : rooms) {
+            for (auto& room : row) {
+                delete room;
+            }
+        }
+        difficulty = other.difficulty;
+        diffConfig = other.diffConfig;
+        mapSize = other.mapSize;
+        currentX = other.currentX;
+        currentY = other.currentY;
+        rooms = std::move(other.rooms);
+        other.mapSize = 0;
+        other.currentX = other.currentY = 0;
+    }
+    return *this;
+}
+
+void Dungeon::replaceWith(Dungeon&& other) {
+    *this = std::move(other);
+}
+
 Dungeon::~Dungeon() {
     // Clean up dynamically allocated rooms
     for (auto& row : rooms) {

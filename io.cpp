@@ -8,6 +8,7 @@
 #include <ctime>
 #include <algorithm>
 #include <iomanip>
+#include <utility>
 
 // Define static constants
 const std::string IO::SAVE_FILE = "dungeon_save.dat"; // Default save file name (fallback)
@@ -317,7 +318,7 @@ bool IO::loadGame(Player& player, Dungeon& dungeon) {
         
         // Only after everything has loaded successfully, update the reference objects
         player = newPlayer;
-        dungeon = newDungeon;
+        dungeon.replaceWith(std::move(newDungeon));
         
         // Update the current room - THIS IS CRITICAL FOR PLAYER MOVEMENT
         dungeon.getRoomAt(dungeon.getCurrentX(), dungeon.getCurrentY())->setVisited(true);
