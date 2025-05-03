@@ -364,7 +364,7 @@ void Dungeon::displayMap() const {
     std::cout << "║ Legend:                ║\n";
     std::cout << "║  🏠 (E) - Entrance     ║\n";
     std::cout << "║  🚪 (X) - Exit         ║\n";
-    std::cout << "║  👤 (@) - You          ║\n";
+    std::cout << "║  👤 (Ω) - You          ║\n";
     std::cout << "║  👹 (M) - Monster      ║\n";
     std::cout << "║  💀 (m) - Dead Monster ║\n";
     std::cout << "║  ⚠️ (T) - Trap         ║\n";
@@ -401,7 +401,7 @@ void Dungeon::displayMap() const {
             
             // Current position
             if (x == currentX && y == currentY) {
-                std::cout << "Ω";
+                std::cout << " Ω ";
             } else {
                 char mapChar = rooms[y][x]->getMapChar();
                 // Add some visual enhancement around the characters
