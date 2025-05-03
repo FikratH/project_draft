@@ -35,11 +35,11 @@ int main() {
 
         switch (choice) {
             case 1: { // Let's start fresh
-                std::cout << "\nSelect difficulty:\n";
-                std::cout << "1. Easy (5x5 map, weaker monsters)\n";
-                std::cout << "2. Medium (7x7 map, balanced experience)\n";
-                std::cout << "3. Hard (10x10 map, stronger monsters)\n";
-                std::cout << "Enter difficulty (1-3): ";
+                Utils::slowPrint("\nSelect difficulty:\n", 15);
+                Utils::slowPrint("1. Easy (5x5 map, weaker monsters)\n", 15);
+                Utils::slowPrint("2. Medium (7x7 map, balanced experience)\n", 15);
+                Utils::slowPrint("3. Hard (10x10 map, stronger monsters)\n", 15);
+                Utils::slowPrint("Enter difficulty (1-3): ", 15);
                 int diffChoice = Utils::getValidInput(1, 3);
                 Difficulty diff = static_cast<Difficulty>(diffChoice - 1);
                 
