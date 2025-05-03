@@ -36,9 +36,12 @@ int main() {
         switch (choice) {
             case 1: { // Let's start fresh
                 Utils::slowPrint("\nSelect difficulty:\n", 15);
-                Utils::slowPrint("1. Easy (5x5 map, weaker monsters)\n", 15);
-                Utils::slowPrint("2. Medium (7x7 map, balanced experience)\n", 15);
-                Utils::slowPrint("3. Hard (10x10 map, stronger monsters)\n", 15);
+                // Easy – extra-green (ANSI 256 code 46)
+                Utils::slowPrint("\033[38;5;46m1. ✪ Easy (5x5 map, weaker monsters)\033[0m\n",15);
+                // Medium – standard yellow
+                Utils::slowPrint("\033[1;93m2. ☆ Medium (7x7 map, balanced experience)\033[0m\n",15);
+                // Hard – extra-red (ANSI 256 code 196)
+                Utils::slowPrint("\033[38;2;191;10;4m3. ★ Hard (10x10 map, stronger monsters)\033[0m\n",15);
                 Utils::slowPrint("Enter difficulty (1-3): ", 15);
                 int diffChoice = Utils::getValidInput(1, 3);
                 Difficulty diff = static_cast<Difficulty>(diffChoice - 1);
