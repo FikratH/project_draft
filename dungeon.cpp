@@ -401,7 +401,7 @@ void Dungeon::displayMap() const {
             
             // Current position
             if (x == currentX && y == currentY) {
-                std::cout << " 🧗 ";
+                std::cout << " ♖ ";
             } else {
                 char mapChar = rooms[y][x]->getMapChar();
                 // Add some visual enhancement around the characters
