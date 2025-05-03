@@ -36,9 +36,12 @@ int main() {
         switch (choice) {
             case 1: { // Let's start fresh
                 std::cout << "\nSelect difficulty:\n";
-                std::cout << "1. Easy (5x5 map, weaker monsters)\n";
-                std::cout << "2. Medium (7x7 map, balanced experience)\n";
-                std::cout << "3. Hard (10x10 map, stronger monsters)\n";
+                // Easy – green
+                std::cout << "\033[1;32m1. ✪ Easy (5x5 map, weaker monsters)\033[0m\n";
+                // Medium – yellow
+                std::cout << "\033[1;33m2. ☆ Medium (7x7 map, balanced experience)\033[0m\n";
+                // Hard – red
+                std::cout << "\033[1;31m3. ★ Hard (10x10 map, stronger monsters)\033[0m\n";
                 std::cout << "Enter difficulty (1-3): ";
                 int diffChoice = Utils::getValidInput(1, 3);
                 Difficulty diff = static_cast<Difficulty>(diffChoice - 1);
