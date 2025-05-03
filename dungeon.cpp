@@ -367,7 +367,7 @@ void Dungeon::displayMap() const {
     std::cout << "║  👤 (Ω) - You          ║\n";
     std::cout << "║  👹 (M) - Monster      ║\n";
     std::cout << "║  💀 (m) - Dead Monster ║\n";
-    std::cout << "║  ⚠️ (T) - Trap         ║\n";
+    std::cout << "║  ⚠️  (T) - Trap         ║\n";
     std::cout << "║  💰 ($) - Treasure     ║\n";
     std::cout << "║  📦 (o) - Empty Chest  ║\n";
     std::cout << "║  ⬜ (.) - Empty Room   ║\n";
@@ -375,7 +375,7 @@ void Dungeon::displayMap() const {
     std::cout << "╚════════════════════════╝\n\n";
     
     // Print the column numbers on top
-    std::cout << "  "; // Space for row numbers
+    std::cout << "  "; // Space for row number
     for (int x = 0; x < mapSize; ++x) {
         std::cout << "  " << x << " ";
     }
