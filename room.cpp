@@ -194,6 +194,7 @@ void Room::enter(Player &player)
     {
         std::cout << "\n";
         // Display a highlighted banner based on room type
+        // Animations added
         switch (type)
         {
         case MONSTER_ROOM:
