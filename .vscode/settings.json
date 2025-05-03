@@ -100,5 +100,6 @@
     "variant": "cpp",
     "vector": "cpp",
     "memory": "cpp"
-  }
+  },
+  "C_Cpp.errorSquiggles": "disabled"
 }
