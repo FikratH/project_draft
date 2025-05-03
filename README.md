@@ -2,12 +2,33 @@
 
 A text-based roguelike game where you explore procedurally-generated dungeons, fight monsters, disarm traps, collect loot, and try to reach the exit alive!
 
+## Team Members
+
+- Adalat Babayev (3036364567)
+- Amil Milevskiy (3036407955)
+- Asset Mukayev (3036384608)
+- Fikrat Huseynov (3036384842)
+- Surkhay Malikov (3036385573)
+- Vladislav Prokopev (3036440438)
+
+## Game Description
+
+Dungeon Crawler Adventure is an immersive text-based roguelike game that combines strategic decision-making with randomized dungeon exploration. The player navigates through a procedurally generated maze-like dungeon filled with monsters, traps, treasures, and special rooms. Each playthrough offers a unique experience with different dungeon layouts, monster encounters, and treasure finds.
+
+The game features an intuitive user interface with colorful ASCII art and a visual dungeon map that updates as the player explores. Combat is turn-based, allowing for tactical decisions, and the player can collect and use various items to aid in their quest. The ultimate goal is to find the exit while gathering as much treasure and experience as possible.
+
 ## Game Features
 
 - **Procedurally generated dungeons** using a depth-first search maze algorithm
 - **Three difficulty levels**: Easy, Medium, and Hard (affects map size, monster strength, etc.)
 - **Turn-based combat system** with various monsters to fight
-- **Trap and treasure rooms** that add variety to your adventure
+- **Multiple room types**:
+  - Monster rooms with creatures to battle
+  - Trap rooms with reflex-based challenges
+  - Treasure rooms with valuable loot
+  - Healing fountains to restore health
+  - Challenge rooms with special encounters
+  - Merchant shops to buy and sell items
 - **Experience and leveling system** that increases your stats as you progress
 - **Inventory system** to manage and use items you collect
 - **Save/Load functionality** to continue your adventure later
@@ -29,57 +50,49 @@ The game is structured into multiple modules, each handling a specific aspect of
 - `combat.h/cpp`: Handles turn-based combat between entities
 - `io.h/cpp`: Provides file I/O for saving/loading and leaderboard
 
-## How to Compile
+## Libraries Used
 
-The project includes a Makefile for easy compilation. Simply run:
+The game uses only standard C++ libraries:
+- `iostream`, `iomanip` - For input/output operations and formatting
+- `fstream`, `sstream` - For file handling and string stream operations
+- `vector`, `string` - For data structures
+- `algorithm` - For various algorithms (sort, find, etc.)
+- `ctime`, `chrono` - For time-related functions
+- `cmath` - For mathematical operations
+- `thread` - For thread management (used in animations and timing)
+- `limits` - For numeric limits
+- `utility` - For pair and move semantics
+
+## How to Compile and Run
+
+The project includes a Makefile for easy compilation. To compile and run the game:
 
 ```bash
+# Compile the game
 make
+
+# Run the game
+./dungeon_crawler
+# OR
+make run
 ```
 
-This will compile all the source files and create an executable named `dungeon_crawler`.
-
-## How to Play
-
-Run the executable:
+To clean up compiled files:
 
 ```bash
-./dungeon_crawler
+make clean
 ```
 
-### Controls:
-- Select options from menus using numbers.
-- Move through the dungeon using W (north), A (west), S (south), D (east).
-- Battle monsters, find treasures, and try to reach the exit!
-- Use items from your inventory to heal or boost your stats.
+## Controls
 
-### Game Symbols:
-- `@`: Your current position
-- `E`: Dungeon entrance
-- `X`: Dungeon exit
-- `M`: Monster (alive)
-- `m`: Defeated monster
-- `T`: Trap
-- `$`: Treasure (not looted)
-- `o`: Empty treasure chest
-- `.`: Empty room
-- `?`: Unexplored room
+- `W`, `A`, `S`, `D`: Move north, west, south, east
+- `I`: View inventory
+- `P`: View player stats
+- `V`: Save game
+- `Q`: Quit to main menu
 
-## Project Requirements Implemented
+During combat and special encounters, follow the on-screen prompts for available actions.
 
-- Random Events: Room triggers (combat, traps, loot)
-- Data Structures: 2D grid of rooms, vectors for inventory, maps for leaderboard
-- Dynamic Memory: Rooms, monsters, and items allocated/deallocated at runtime
-- File I/O: Saving/loading game state and leaderboard data
-- Multi-File Design: Each feature in its own header+source file
-- Multiple Difficulty Levels: Customizable game experience
+## Save/Load System
 
-## Tips for Playing
-
-- Start with Easy difficulty to learn the game mechanics.
-- Collect items to help you survive tougher battles.
-- Remember that you can save your game and continue later.
-- Try to reach higher levels before tackling the exit on harder difficulties.
-- Keep an eye on your HP during combat - know when to run away!
-
-Good luck, adventurer!
+The game automatically creates save files named after your character. You can load these saves from the main menu. Your progress, including dungeon state, inventory, and player stats, will be preserved.
