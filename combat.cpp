@@ -9,7 +9,7 @@ bool Combat::battle(Player& player, Monster& monster) {
     std::cout << "You encounter a " << monster.getName() << "!" << std::endl;
     
     bool isPlayerTurn = true; // Player goes first
-    
+    //cc
     // Combat loop
     while (player.isAlive() && monster.isAlive()) {
         // Display stats
