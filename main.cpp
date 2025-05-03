@@ -41,20 +41,23 @@ int main() {
         // Let's see what the player wants to do
         std::cout << "MAIN MENU:\n";
 
-        std::cout << "\033[1;92m╭───────╮\033[0m\n";
-        std::cout << "│   1   │";std::cout << "  NEW GAME\n";
-        std::cout << "╰───────╯\n";
-        std::cout << "\033[1;94m╭───────╮\033[0m\n";
-        std::cout << "│   2   │";std::cout << "  LOAD GAME\n";
-        std::cout << "╰───────╯\n";
-        std::cout << "\033[1;38;5;208m╭───────╮\033[0m\n";
-        std::cout << "│   3   │";std::cout << "  LEADERBOARD\n";
-        std::cout << "╰───────╯\n";
-        std::cout << "[1;38;5;196m╭───────╮[0m\n";
-        std::cout << "│   4   │";std::cout << "  EXIT\n";
-        std::cout << "╰───────╯\n";
-        std::cout<<std::endl;
-        std::cout << "\033[38;2;150;50;255m Enter your choice (1-4): \033[0m";
+        std::string menuText =
+    "\033[1;92m╭───────╮\033[0m\n"
+    "│   1   │  NEW GAME\n"
+    "╰───────╯\n"
+    "\033[1;94m╭───────╮\033[0m\n"
+    "│   2   │  LOAD GAME\n"
+    "╰───────╯\n"
+    "\033[1;38;5;208m╭───────╮\033[0m\n"
+    "│   3   │  LEADERBOARD\n"
+    "╰───────╯\n"
+    "\033[1;38;5;196m╭───────╮\033[0m\n"
+    "│   4   │  EXIT\n"
+    "╰───────╯\n\n"
+    "Enter your choice (1-4): ";
+
+Utils::slowVerticalPrint(menuText, 100);
+;
         choice = Utils::getValidInput(1, 4);
 
         switch (choice) {

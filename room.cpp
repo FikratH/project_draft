@@ -277,7 +277,7 @@ void Room::enter(Player &player)
         break;
 
     case ENTRANCE:
-    Utils::slowPrint("This is the entrance to the dungeon.", 20);
+        Utils::slowPrint("This is the entrance to the dungeon.", 20);
         break;
 
     case EXIT:
@@ -340,56 +340,61 @@ void Room::display() const
     case MONSTER_ROOM:
         if (monster && monster->isAlive())
         {
-            std::cout << "\033[1;36m╔═══════════⚔️ BATTLE ["
-                      << x << "," << y
-                      << "]═════════════╗\033[0m\n";
+            std::string battleBanner =
+                "\033[1;36m╔═══════════⚔️ BATTLE [" + std::to_string(x) + "," + std::to_string(y) + "]═════════════╗\033[0m\n";
+
+            Utils::slowVerticalPrint(battleBanner, 200);
         }
         else
         {
-            std::cout << "\033[1;36m╔═══════════💀 CLEARED ["
-                      << x << "," << y
-                      << "]════════════╗\033[0m\n";
+            std::string clearedBanner =
+                "\033[1;36m╔═══════════💀 CLEARED [" + std::to_string(x) + "," + std::to_string(y) + "]════════════╗\033[0m\n";
+
+            Utils::slowVerticalPrint(clearedBanner, 200);
         }
         break;
-    case TRAP_ROOM:
-        std::cout << "\033[1;36m╔════════════⚠️ DANGER ["
-                  << x << "," << y
-                  << "]════════════╗\033[0m\n";
-        break;
-    case TREASURE_ROOM:
-        std::cout << "\033[1;36m╔═══════════💰 TREASURE ["
-                  << x << "," << y
-                  << "]══════════╗\033[0m\n";
-        break;
-    case ENTRANCE:
-        std::cout << "\033[1;36m╔═══════════🏠 ENTRANCE ["
-                  << x << "," << y
-                  << "]═══════════╗\033[0m\n";
-        break;
-    case EXIT:
-        std::cout << "\033[1;36m╔═════════════🚪 EXIT ["
-                  << x << "," << y
-                  << "]════════════╗\033[0m\n";
-        break;
-    case HEALING_ROOM:
-        std::cout << "\033[1;36m╔═════════════💚 HEAL ["
-                  << x << "," << y
-                  << "]════════════╗\033[0m\n";
-        break;
-    case CHALLENGE_ROOM:
-        std::cout << "\033[1;36m╔══════════🎯 CHALLENGE ["
-                  << x << "," << y
-                  << "]══════════╗\033[0m\n";
-        break;
-    case MERCHANT_ROOM:
-        std::cout << "\033[1;36m╔════════════💵 SHOP ["
-                  << x << "," << y
-                  << "]═════════════╗\033[0m\n";
-        break;
-    default: // EMPTY or any other
-        std::cout << "\033[1;36m╔═════════════ EMPTY ["
-                  << x << "," << y
-                  << "]═════════════╗\033[0m\n";
+            case TRAP_ROOM: {
+                std::string msg = "\033[1;36m╔════════════⚠️ DANGER [" + std::to_string(x) + "," + std::to_string(y) + "]════════════╗\033[0m\n";
+                Utils::slowVerticalPrint(msg, 200);
+                break;
+            }
+            case TREASURE_ROOM: {
+                std::string msg = "\033[1;36m╔═══════════💰 TREASURE [" + std::to_string(x) + "," + std::to_string(y) + "]══════════╗\033[0m\n";
+                Utils::slowVerticalPrint(msg, 200);
+                break;
+            }
+            case ENTRANCE: {
+                std::string msg = "\033[1;36m╔═══════════🏠 ENTRANCE [" + std::to_string(x) + "," + std::to_string(y) + "]═══════════╗\033[0m\n";
+                Utils::slowVerticalPrint(msg, 200);
+                break;
+            }
+            case EXIT: {
+                std::string msg = "\033[1;36m╔═════════════🚪 EXIT [" + std::to_string(x) + "," + std::to_string(y) + "]════════════╗\033[0m\n";
+                Utils::slowVerticalPrint(msg, 200);
+                break;
+            }
+            case HEALING_ROOM: {
+                std::string msg = "\033[1;36m╔═════════════💚 HEAL [" + std::to_string(x) + "," + std::to_string(y) + "]════════════╗\033[0m\n";
+                Utils::slowVerticalPrint(msg, 200);
+                break;
+            }
+            case CHALLENGE_ROOM: {
+                std::string msg = "\033[1;36m╔══════════🎯 CHALLENGE [" + std::to_string(x) + "," + std::to_string(y) + "]══════════╗\033[0m\n";
+                Utils::slowVerticalPrint(msg, 200);
+                break;
+            }
+            case MERCHANT_ROOM: {
+                std::string msg = "\033[1;36m╔════════════💵 SHOP [" + std::to_string(x) + "," + std::to_string(y) + "]═════════════╗\033[0m\n";
+                Utils::slowVerticalPrint(msg, 200);
+                break;
+            }
+            default: {
+                std::string msg = "\033[1;36m╔═════════════ EMPTY [" + std::to_string(x) + "," + std::to_string(y) + "]═════════════╗\033[0m\n";
+                Utils::slowVerticalPrint(msg, 200);
+                break;
+            
+        }
+        
         break;
     }
     // ————————————————————————————————
@@ -420,57 +425,57 @@ void Room::display() const
     case MONSTER_ROOM:
         if (monster && monster->isAlive())
         {
-            std::cout << "\033[1;31m👹 MONSTER\033[0m       \033[1;32mΩ\033[0m";
+            Utils::slowVerticalPrint("\033[1;31m👹 MONSTER\033[0m       \033[1;32mΩ\033[0m", 150);
         }
         else
         {
-            std::cout << "\033[1;90m💀 DEFEATED\033[0m      \033[1;32mΩ\033[0m";
+            Utils::slowVerticalPrint("\033[1;90m💀 DEFEATED\033[0m      \033[1;32mΩ\033[0m", 150);
         }
         break;
     case TRAP_ROOM:
-        std::cout << "\033[1;33m⚠️ TRAP\033[0m            \033[1;32mΩ\033[0m";
+        Utils::slowVerticalPrint("\033[1;33m⚠️ TRAP\033[0m            \033[1;32mΩ\033[0m", 150);
         break;
     case TREASURE_ROOM:
         if (treasure)
         {
-            std::cout << "\033[1;33m💰 GOLD\033[0m          \033[1;32mΩ\033[0m";
+            Utils::slowVerticalPrint("\033[1;33m💰 GOLD\033[0m          \033[1;32mΩ\033[0m", 150);
         }
         else
         {
-            std::cout << "\033[1;90m📦 EMPTY\033[0m         \033[1;32mΩ\033[0m";
+            Utils::slowVerticalPrint("\033[1;90m📦 EMPTY\033[0m         \033[1;32mΩ\033[0m", 150);
         }
         break;
     case ENTRANCE:
-        std::cout << "\033[1;32m🏠 START\033[0m         \033[1;32mΩ\033[0m";
+        Utils::slowVerticalPrint("\033[1;32m🏠 START\033[0m         \033[1;32mΩ\033[0m", 150);
         break;
     case EXIT:
-        std::cout << "\033[1;36m🚪 EXIT\033[0m          \033[1;32mΩ\033[0m";
+        Utils::slowVerticalPrint("\033[1;36m🚪 EXIT\033[0m          \033[1;32mΩ\033[0m", 150);
         break;
     default:
-        std::cout << "                 \033[1;32mΩ\033[0m";
+    Utils::slowVerticalPrint("                 \033[1;32mΩ\033[0m", 150);
     }
 
     if (eastOpen)
     {
-        std::cout << "                   \033[1;33m→\033[0m\n";
+        Utils::slowVerticalPrint("                   \033[1;33m→\033[0m\n", 150);
     }
     else
     {
-        std::cout << " \033[1;36m                  ║\033[0m\n";
+        Utils::slowVerticalPrint(" \033[1;36m                  ║\033[0m\n", 150);
     }
 
     // Bottom border with south exit
     if (southOpen)
     {
-        std::cout << "\033[1;36m║\033[0m                  \033[1;33m↓\033[0m                   \033[1;36m║\033[0m\n";
+        Utils::slowVerticalPrint("\033[1;36m║\033[0m                  \033[1;33m↓\033[0m                   \033[1;36m║\033[0m\n", 150);
     }
     else
     {
-        std::cout << "\033[1;36m╠══════════════════════════════════════╣\033[0m\n";
+        Utils::slowVerticalPrint("\033[1;36m╠══════════════════════════════════════╣\033[0m\n", 150);
     }
 
     // Room description section
-    std::cout << "\033[1;36m║\033[0m                                      \033[1;36m║\033[0m\n";
+    Utils::slowVerticalPrint("\033[1;36m║\033[0m                                      \033[1;36m║\033[0m\n", 150);
 
     // Show room type with more descriptive text
     switch (type)
@@ -478,27 +483,33 @@ void Room::display() const
     case MONSTER_ROOM:
         if (monster && monster->isAlive())
         {
-            std::cout << "\033[1;36m║\033[0m" << "\033[1;31m A fearsome monster stands before you!\033[0m" << "\033[1;36m║\033[0m\n";
-            std::cout << "\033[1;36m║\033[0m" << "\033[1;31m Prepare for battle!                  \033[0m" << "\033[1;36m║\033[0m\n";
-            std::cout << "\033[1;36m║\033[0m \033[1;31mA " << monster->getName() << "\033[0m";
-            // Calculate remaining space
-            int monsterNameSpace = std::max(0, 35 - static_cast<int>(monster->getName().length()));
-            for (int i = 0; i < monsterNameSpace; i++)
-                std::cout << " ";
-            std::cout << "\033[1;36m║\033[0m\n";
-            std::cout << "\033[1;36m║\033[0m \033[1;31mIt looks dangerous!\033[0m                  \033[1;36m║\033[0m\n";
-            std::cout << "\033[1;36m║\033[0m \033[1;31mPrepare for battle...\033[0m                \033[1;36m║\033[0m\n";
+            std::string monsterName = monster->getName();
+int monsterNameSpace = std::max(0, 35 - static_cast<int>(monsterName.length()));
+std::string spacing(monsterNameSpace, ' ');
+
+std::string monsterIntro =
+    "\033[1;36m║\033[0m\033[1;31m A fearsome monster stands before you!\033[0m\033[1;36m║\033[0m\n"
+    "\033[1;36m║\033[0m\033[1;31m Prepare for battle!                  \033[0m\033[1;36m║\033[0m\n"
+    "\033[1;36m║\033[0m \033[1;31mA " + monsterName + "\033[0m" + spacing + "\033[1;36m║\033[0m\n"
+    "\033[1;36m║\033[0m \033[1;31mIt looks dangerous!\033[0m                  \033[1;36m║\033[0m\n"
+    "\033[1;36m║\033[0m \033[1;31mPrepare for battle...\033[0m                \033[1;36m║\033[0m\n";
+
+Utils::slowVerticalPrint(monsterIntro, 150);
+
         }
         else
         {
-            std::cout << "\033[1;36m║\033[0m \033[1;90mYou've defeated the\033[0m                  \033[1;36m║\033[0m\n";
-            std::cout << "\033[1;36m║\033[0m \033[1;90m" << monster->getName() << "\033[0m";
-            // Calculate remaining space
-            int monsterNameSpace = std::max(0, 36 - static_cast<int>(monster->getName().length()));
-            for (int i = 0; i < monsterNameSpace; i++)
-                std::cout << " ";
-            std::cout << "\033[1;36m║\033[0m\n";
-            std::cout << "\033[1;36m║\033[0m \033[1;90mWell done, adventurer!\033[0m               \033[1;36m║\033[0m\n";
+            std::string monsterName = monster->getName();
+int monsterNameSpace = std::max(0, 36 - static_cast<int>(monsterName.length()));
+std::string spacing(monsterNameSpace, ' ');
+
+std::string defeatedText =
+    "\033[1;36m║\033[0m \033[1;90mYou've defeated the\033[0m                  \033[1;36m║\033[0m\n"
+    "\033[1;36m║\033[0m \033[1;90m" + monsterName + "\033[0m" + spacing + "\033[1;36m║\033[0m\n"
+    "\033[1;36m║\033[0m \033[1;90mWell done, adventurer!\033[0m               \033[1;36m║\033[0m\n";
+
+Utils::slowVerticalPrint(defeatedText, 150);
+
         }
         break;
 
