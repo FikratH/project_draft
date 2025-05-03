@@ -386,7 +386,7 @@ void Room::display() const {
     }
     
     if (eastOpen) {
-        std::cout << " \033[1;33m→\033[0m                       \n";
+        std::cout << "                      \033[1;33m→\033[0m\n";
     } else {
         std::cout << " \033[1;36m                     ║\033[0m\n";
     }
