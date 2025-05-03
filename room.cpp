@@ -285,10 +285,62 @@ void Room::display() const {
             roomEmoji = "";
     }
     
-    // Display room banner with coordinates and room type
-    /*std::cout << "\n\033[1;36m╔═════════" << roomEmoji << roomName;
-    std::cout << " [" << x << "," << y << "]";
-    std::cout << "═════════╗\033[0m\n";*/
+    // ——— Fixed-width banner per room type ———
+    std::cout << "\n";
+    switch (type) {
+        case MONSTER_ROOM:
+            if (monster && monster->isAlive()) {
+                std::cout << "\033[1;36m╔═════════⚔️ BATTLE [" 
+                          << x << "," << y 
+                          << "]═════════╗\033[0m\n";
+            } else {
+                std::cout << "\033[1;36m╔═════════💀 CLEARED [" 
+                          << x << "," << y 
+                          << "]═════════╗\033[0m\n";
+            }
+            break;
+        case TRAP_ROOM:
+            std::cout << "\033[1;36m╔═════════⚠️ DANGER [" 
+                      << x << "," << y 
+                      << "]═════════╗\033[0m\n";
+            break;
+        case TREASURE_ROOM:
+            std::cout << "\033[1;36m╔═════════💰 TREASURE [" 
+                      << x << "," << y 
+                      << "]═════════╗\033[0m\n";
+            break;
+        case ENTRANCE:
+            std::cout << "\033[1;36m╔═════════🏠 ENTRANCE [" 
+                      << x << "," << y 
+                      << "]═════════╗\033[0m\n";
+            break;
+        case EXIT:
+            std::cout << "\033[1;36m╔═════════🚪 EXIT [" 
+                      << x << "," << y 
+                      << "]═════════╗\033[0m\n";
+            break;
+        case HEALING_ROOM:
+            std::cout << "\033[1;36m╔═════════💚 HEAL [" 
+                      << x << "," << y 
+                      << "]═════════╗\033[0m\n";
+            break;
+        case CHALLENGE_ROOM:
+            std::cout << "\033[1;36m╔═════════🎯 CHALLENGE [" 
+                      << x << "," << y 
+                      << "]═════════╗\033[0m\n";
+            break;
+        case MERCHANT_ROOM:
+            std::cout << "\033[1;36m╔═════════💵 SHOP [" 
+                      << x << "," << y 
+                      << "]═════════╗\033[0m\n";
+            break;
+        default:  // EMPTY or any other
+            std::cout << "\033[1;36m╔═════════ EMPTY [" 
+                      << x << "," << y 
+                      << "]═════════╗\033[0m\n";
+            break;
+    }
+    // ————————————————————————————————
     
     // Top border with north exit
     if (northOpen) {
