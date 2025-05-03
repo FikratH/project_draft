@@ -14,24 +14,22 @@ void startGame(Difficulty difficulty);
 
 int main() {
     // Splash screen - gotta look cool, right?
-    std::cout<<std::endl;
-    std::cout<<std::endl;
-    std::cout<<"    [1;38;5;196m ██████╗ ██╗   ██╗███╗   ██  ██████╗ ███████╗ ██████╗ ███╗   ██╗[0m" << std::endl;
-    std::cout<<"    [1;38;5;196m ██╔══██╗██║   ██║████╗  ██ ██╔════╝ ██╔════╝██╔═══██╗████╗  ██║[0m" << std::endl;
-    std::cout<<"    [1;38;5;196m ██║  ██║██║   ██║██╔██╗ ██║██║  ███╗█████╗  ██║   ██║██╔██╗ ██║[0m" << std::endl;
-    std::cout<<"    [1;38;5;196m ██║  ██║██║   ██║██║╚██╗██║██║   ██║██╔══╝  ██║   ██║██║╚██╗██║[0m" << std::endl;
-    std::cout<<"    [1;38;5;196m ██████╔╝╚██████╔╝██║ ╚████║╚██████╔╝███████╗╚██████╔╝██║ ╚████║[0m" << std::endl;
-    std::cout<<"    [1;38;5;196m ╚═════╝  ╚═════╝ ╚═╝  ╚═══╝ ╚═════╝ ╚══════╝ ╚═════╝ ╚═╝  ╚═══╝[0m" << std::endl;
+    Utils::slowVerticalPrint("    [1;38;5;196m ██████╗ ██╗   ██╗███╗   ██  ██████╗ ███████╗ ██████╗ ███╗   ██╗[0m");
+    Utils::slowVerticalPrint("    [1;38;5;196m ██╔══██╗██║   ██║████╗  ██ ██╔════╝ ██╔════╝██╔═══██╗████╗  ██║[0m");
+    Utils::slowVerticalPrint("    [1;38;5;196m ██║  ██║██║   ██║██╔██╗ ██║██║  ███╗█████╗  ██║   ██║██╔██╗ ██║[0m");
+    Utils::slowVerticalPrint("    [1;38;5;196m ██║  ██║██║   ██║██║╚██╗██║██║   ██║██╔══╝  ██║   ██║██║╚██╗██║[0m");
+    Utils::slowVerticalPrint("    [1;38;5;196m ██████╔╝╚██████╔╝██║ ╚████║╚██████╔╝███████╗╚██████╔╝██║ ╚████║[0m");
+    Utils::slowVerticalPrint("    [1;38;5;196m ╚═════╝  ╚═════╝ ╚═╝  ╚═══╝ ╚═════╝ ╚══════╝ ╚═════╝ ╚═╝  ╚═══╝[0m");
 
-    std::cout<<"        [1;38;5;202m ██████╗██████╗  █████╗ ██╗    ██╗██╗     ███████╗██████╗ [0m" << std::endl;
-    std::cout<<"        [1;38;5;202m██╔════╝██╔══██╗██╔══██╗██║    ██║██║     ██╔════╝██╔══██╗[0m" << std::endl;
-    std::cout<<"        [1;38;5;202m██║     ██████╔╝███████║██║ █╗ ██║██║     █████╗  ██████╔╝[0m" << std::endl;
-    std::cout<<"        [1;38;5;202m██║     ██╔══██╗██╔══██║██║███╗██║██║     ██╔══╝  ██╔══██╗[0m" << std::endl;
-    std::cout<<"        [1;38;5;202m╚██████╗██║  ██║██║  ██║╚███╔███╔╝███████╗███████╗██║  ██║[0m" << std::endl;
-    std::cout<<"        [1;38;5;202m ╚═════╝╚═╝  ╚═╝╚═╝  ╚═╝ ╚══╝╚══╝ ╚══════╝╚══════╝╚═╝  ╚═╝[0m" << std::endl;
-    std::cout << "          [1;38;5;202m=================================================[0m\n\n";
-    std::cout << "Welcome brave adventurer! Prepare to delve into the depths\n";
-    std::cout << "of a dangerous dungeon filled with monsters, traps, and treasures.\n\n";
+    Utils::slowVerticalPrint("        [1;38;5;202m ██████╗██████╗  █████╗ ██╗    ██╗██╗     ███████╗██████╗ [0m");
+    Utils::slowVerticalPrint("        [1;38;5;202m██╔════╝██╔══██╗██╔══██╗██║    ██║██║     ██╔════╝██╔══██╗[0m");
+    Utils::slowVerticalPrint("        [1;38;5;202m██║     ██████╔╝███████║██║ █╗ ██║██║     █████╗  ██████╔╝[0m");
+    Utils::slowVerticalPrint("        [1;38;5;202m██║     ██╔══██╗██╔══██║██║███╗██║██║     ██╔══╝  ██╔══██╗[0m");
+    Utils::slowVerticalPrint("        [1;38;5;202m╚██████╗██║  ██║██║  ██║╚███╔███╔╝███████╗███████╗██║  ██║[0m");
+    Utils::slowVerticalPrint("        [1;38;5;202m ╚═════╝╚═╝  ╚═╝╚═╝  ╚═╝ ╚══╝╚══╝ ╚══════╝╚══════╝╚═╝  ╚═╝[0m");
+    Utils::slowVerticalPrint("          [1;38;5;202m========================================================[0m\n\n");
+    Utils::slowPrint("Welcome, Brave Adventurer! Prepare to delve into the depths\n", 25);
+    Utils::slowPrint("of a dangerous dungeon filled with monsters, traps, and treasures!\n\n", 25);
 
     bool isPlaying = true;
     int choice;

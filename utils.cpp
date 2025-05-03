@@ -104,6 +104,24 @@ void Utils::slowPrint(const std::string& message, int delayMs)
     }
 }
 
+void Utils::slowVerticalPrint(const std::string& multilineText, int delayMs) {
+    std::istringstream stream(multilineText);
+    std::string line;
+    std::vector<std::string> lines;
+
+    // Split into lines
+    while (std::getline(stream, line)) {
+        lines.push_back(line);
+    }
+
+    // Print one line at a time with delay
+    for (const auto& l : lines) {
+        std::cout << l << std::endl;
+        std::this_thread::sleep_for(std::chrono::milliseconds(delayMs));
+    }
+}
+
+
 std::vector<std::string> Utils::split(const std::string &s, char delimiter)
 {
     std::vector<std::string> tokens;

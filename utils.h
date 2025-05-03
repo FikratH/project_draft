@@ -28,6 +28,9 @@ public:
     // Slow print a string to console
     static void slowPrint(const std::string& message, int delayMs);
 
+    // Slow print a string vertically to console
+    static void slowVerticalPrint(const std::string& multilineText, int delayMs = 150);
+
     // Split a string by delimiter
     static std::vector<std::string> split(const std::string& s, char delimiter);
     
