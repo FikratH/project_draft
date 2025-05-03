@@ -166,47 +166,47 @@ void Room::enter(Player& player) {
             case MONSTER_ROOM:
                 if (monster && monster->isAlive()) {
                     std::cout << "\033[1;31m╔═════════ CHALLENGE ═════════╗\033[0m\n";
-                    std::cout << "\033[1;31m║👺  MONSTER ENCOUNTER!  👺║\033[0m\n";
-                    std::cout << "\033[1;31m╚═══════════════════════════╝\033[0m\n";
+                    std::cout << "\033[1;31m║      MONSTER ENCOUNTER!     ║\033[0m\n";
+                    std::cout << "\033[1;31m╚═════════════════════════════╝\033[0m\n";
                     std::cout << "A " << monster->getName() << " stands in your way! Prepare for battle!\n";
                 }
                 break;
                 
             case TRAP_ROOM:
                 std::cout << "\033[1;33m╔═════════ CHALLENGE ═════════╗\033[0m\n";
-                std::cout << "\033[1;33m║⚠️   DEADLY TRAP!    ⚠️║\033[0m\n";
-                std::cout << "\033[1;33m╚═══════════════════════════╝\033[0m\n";
+                std::cout << "\033[1;33m║         DEADLY TRAP!        ║\033[0m\n";
+                std::cout << "\033[1;33m╚═════════════════════════════╝\033[0m\n";
                 break;
                 
             case TREASURE_ROOM:
                 if (treasure) {
                     std::cout << "\033[1;32m╔══════════ REWARD ══════════╗\033[0m\n";
-                    std::cout << "\033[1;32m║     TREASURE FOUND!        ║\033[0m\n";
+                    std::cout << "\033[1;32m║       TREASURE FOUND!      ║\033[0m\n";
                     std::cout << "\033[1;32m╚════════════════════════════╝\033[0m\n";
                 }
                 break;
                 
             case EXIT:
                 std::cout << "\033[1;36m╔══════════ GOAL ══════════╗\033[0m\n";
-                std::cout << "\033[1;36m║   🚪   EXIT FOUND!   🚪   ║\033[0m\n";
+                std::cout << "\033[1;36m║        EXIT FOUND!       ║\033[0m\n";
                 std::cout << "\033[1;36m╚══════════════════════════╝\033[0m\n";
                 break;
                 
             case HEALING_ROOM:
                 std::cout << "\033[1;32m╔═════════ SANCTUARY ═════════╗\033[0m\n";
-                std::cout << "\033[1;32m║   💚  HEALING FOUNTAIN  💚   ║\033[0m\n";
+                std::cout << "\033[1;32m║   ♡   HEALING FOUNTAIN   ♡  ║\033[0m\n";
                 std::cout << "\033[1;32m╚═════════════════════════════╝\033[0m\n";
                 break;
                 
             case CHALLENGE_ROOM:
                 std::cout << "\033[1;35m╔═════════ CHALLENGE ═════════╗\033[0m\n";
-                std::cout << "\033[1;35m║   🎯  TEST YOUR SKILLS  🎯   ║\033[0m\n";
+                std::cout << "\033[1;35m║      TEST YOUR SKILLS       ║\033[0m\n";
                 std::cout << "\033[1;35m╚═════════════════════════════╝\033[0m\n";
                 break;
                 
             case MERCHANT_ROOM:
                 std::cout << "\033[1;33m╔══════════ TRADER ══════════╗\033[0m\n";
-                std::cout << "\033[1;33m║   💵   MERCHANT SHOP   💰   ║\033[0m\n";
+                std::cout << "\033[1;33m║    $   MERCHANT SHOP   $   ║\033[0m\n";
                 std::cout << "\033[1;33m╚════════════════════════════╝\033[0m\n";
                 break;
         }

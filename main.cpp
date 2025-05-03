@@ -233,7 +233,7 @@ void startGameLoop(Player& player, Dungeon& dungeon) {
                 Utils::clearScreen();
                 std::cout << "\n╔═════ PLAYER STATS ═════╗\n";
                 player.displayStats();
-                std::cout << "╚═══════════════════════════╝\n";
+                std::cout << "╚════════════════════════╝\n";
                 std::cout << "Press Enter to continue...";
                 std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
                 
