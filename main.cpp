@@ -14,9 +14,22 @@ void startGame(Difficulty difficulty);
 
 int main() {
     // Splash screen - gotta look cool, right?
-    std::cout << "=================================\n";
-    std::cout << "   DUNGEON CRAWLER ADVENTURE    \n";
-    std::cout << "=================================\n\n";
+    std::cout<<std::endl;
+    std::cout<<std::endl;
+    std::cout<<"    [1;38;5;196m ██████╗ ██╗   ██╗███╗   ██  ██████╗ ███████╗ ██████╗ ███╗   ██╗[0m" << std::endl;
+    std::cout<<"    [1;38;5;196m ██╔══██╗██║   ██║████╗  ██ ██╔════╝ ██╔════╝██╔═══██╗████╗  ██║[0m" << std::endl;
+    std::cout<<"    [1;38;5;196m ██║  ██║██║   ██║██╔██╗ ██║██║  ███╗█████╗  ██║   ██║██╔██╗ ██║[0m" << std::endl;
+    std::cout<<"    [1;38;5;196m ██║  ██║██║   ██║██║╚██╗██║██║   ██║██╔══╝  ██║   ██║██║╚██╗██║[0m" << std::endl;
+    std::cout<<"    [1;38;5;196m ██████╔╝╚██████╔╝██║ ╚████║╚██████╔╝███████╗╚██████╔╝██║ ╚████║[0m" << std::endl;
+    std::cout<<"    [1;38;5;196m ╚═════╝  ╚═════╝ ╚═╝  ╚═══╝ ╚═════╝ ╚══════╝ ╚═════╝ ╚═╝  ╚═══╝[0m" << std::endl;
+
+    std::cout<<"        [1;38;5;202m ██████╗██████╗  █████╗ ██╗    ██╗██╗     ███████╗██████╗ [0m" << std::endl;
+    std::cout<<"        [1;38;5;202m██╔════╝██╔══██╗██╔══██╗██║    ██║██║     ██╔════╝██╔══██╗[0m" << std::endl;
+    std::cout<<"        [1;38;5;202m██║     ██████╔╝███████║██║ █╗ ██║██║     █████╗  ██████╔╝[0m" << std::endl;
+    std::cout<<"        [1;38;5;202m██║     ██╔══██╗██╔══██║██║███╗██║██║     ██╔══╝  ██╔══██╗[0m" << std::endl;
+    std::cout<<"        [1;38;5;202m╚██████╗██║  ██║██║  ██║╚███╔███╔╝███████╗███████╗██║  ██║[0m" << std::endl;
+    std::cout<<"        [1;38;5;202m ╚═════╝╚═╝  ╚═╝╚═╝  ╚═╝ ╚══╝╚══╝ ╚══════╝╚══════╝╚═╝  ╚═╝[0m" << std::endl;
+    std::cout << "          [1;38;5;202m=================================================[0m\n\n";
     std::cout << "Welcome brave adventurer! Prepare to delve into the depths\n";
     std::cout << "of a dangerous dungeon filled with monsters, traps, and treasures.\n\n";
 
@@ -41,7 +54,7 @@ int main() {
                 // Medium – standard yellow
                 Utils::slowPrint("\033[1;93m2. ☆ Medium (7x7 map, balanced experience)\033[0m\n",15);
                 // Hard – extra-red (ANSI 256 code 196)
-                Utils::slowPrint("\033[38;2;191;10;4m3. ★ Hard (10x10 map, stronger monsters)\033[0m\n",15);
+                Utils::slowPrint("\033[1;91m3. ★ Hard (10x10 map, stronger monsters)\033[0m\n",15);
                 Utils::slowPrint("Enter difficulty (1-3): ", 15);
                 int diffChoice = Utils::getValidInput(1, 3);
                 Difficulty diff = static_cast<Difficulty>(diffChoice - 1);
