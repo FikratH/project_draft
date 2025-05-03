@@ -301,11 +301,14 @@ void startGameLoop(Player& player, Dungeon& dungeon) {
         // Check if player is dead
         if (player.getHP() <= 0) {
             Utils::clearScreen();
-            std::cout << "\n╔════════ GAME OVER ════════╗\n";
-            std::cout << "║  You have been defeated!  ║\n";
-            std::cout << "╚═══════════════════════════╝\n";
-            std::cout << "Final Score: " << player.getScore() << "\n";
-            std::cout << "Press Enter to continue...";
+            Utils::slowPrint("\n╔════════ GAME OVER ════════╗\n", 30);
+            Utils::slowPrint("║  You have been defeated!  ║\n", 30);
+            Utils::slowPrint("╚═══════════════════════════╝\n", 30);
+        
+            std::string scoreText = "Final Score: " + std::to_string(player.getScore()) + "\n";
+            Utils::slowPrint(scoreText, 30);
+        
+            Utils::slowPrint("Press Enter to continue...", 30);
             std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
             isRunning = false;
         }
@@ -313,15 +316,19 @@ void startGameLoop(Player& player, Dungeon& dungeon) {
         // Check if player has reached the exit
         if (dungeon.hasReachedExit()) {
             Utils::clearScreen();
-            std::cout << "\n╔═════════ VICTORY ═════════╗\n";
-            std::cout << "║ Congratulations!          ║\n";
-            std::cout << "║ You escaped the dungeon!  ║\n";
-            std::cout << "╚═══════════════════════════╝\n";
+            Utils::slowPrint("\n╔═════════ VICTORY ═════════╗\n", 30);
+            Utils::slowPrint("║ Congratulations!          ║\n", 30);
+            Utils::slowPrint("║ You escaped the dungeon!  ║\n", 30);
+            Utils::slowPrint("╚═══════════════════════════╝\n", 30);
+        
             player.addScore(1000); // Bonus for completing
-            std::cout << "Final Score: " << player.getScore() << "\n";
-            std::cout << "Press Enter to continue...";
+            std::string scoreText = "Final Score: " + std::to_string(player.getScore()) + "\n";
+            Utils::slowPrint(scoreText, 30);
+        
+            Utils::slowPrint("Press Enter to continue...", 30);
             std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
             isRunning = false;
         }
+        
     }
 }
