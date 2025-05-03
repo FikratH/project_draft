@@ -37,11 +37,23 @@ int main() {
     while (isPlaying) {
         // Let's see what the player wants to do
         std::cout << "MAIN MENU:\n";
-        std::cout << "1. New Game\n";
-        std::cout << "2. Load Game\n";
-        std::cout << "3. View Leaderboard\n";
-        std::cout << "4. Exit\n";
-        std::cout << "Enter your choice (1-4): ";
+
+        std::cout << "\033[1;92m╭───────╮\033[0m\n";
+        std::cout << "│   1   │";std::cout << "  NEW GAME\n";
+        std::cout << "╰───────╯\n";
+        std::cout << "\033[1;94m╭───────╮\033[0m\n";
+        std::cout << "│   2   │";std::cout << "  LOAD GAME\n";
+        std::cout << "╰───────╯\n";
+        std::cout << "\033[1;38;5;208m╭───────╮\033[0m\n";
+        std::cout << "│   3   │";std::cout << "  LEADERBOARD\n";
+        std::cout << "╰───────╯\n";
+        std::cout << "[1;38;5;196m╭───────╮[0m\n";
+        std::cout << "│   4   │";std::cout << "  EXIT\n";
+        std::cout << "╰───────╯\n";
+        std::cout<<std::endl;
+        std::cout << "\033[38;2;150;50;255m Enter your choice (1-4): \033[0m" << std::endl;
+        std::cout<<std::endl;
+
         choice = Utils::getValidInput(1, 4);
 
         switch (choice) {
