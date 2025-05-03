@@ -168,7 +168,7 @@ void Room::enter(Player& player) {
                     std::cout << "\033[1;31m╔═════════ CHALLENGE ═════════╗\033[0m\n";
                     std::cout << "\033[1;31m║      MONSTER ENCOUNTER!     ║\033[0m\n";
                     std::cout << "\033[1;31m╚═════════════════════════════╝\033[0m\n";
-                    std::cout << "A " << monster->getName() << " stands in your way! Prepare for battle!\n";
+                    std::cout << "\nA " << monster->getName() << " stands in your way! Prepare for battle!\n";
                 }
                 break;
                 
@@ -209,6 +209,15 @@ void Room::enter(Player& player) {
                 std::cout << "\033[1;33m║    $   MERCHANT SHOP   $   ║\033[0m\n";
                 std::cout << "\033[1;33m╚════════════════════════════╝\033[0m\n";
                 break;
+
+            case ENTRANCE:
+                // No special banner here; entrance handled separately
+                break;
+
+            case EMPTY:
+                // Never announce empty rooms
+                break;
+
         }
     }
     
@@ -344,7 +353,7 @@ void Room::display() const {
     
     // Top border with north exit
     if (northOpen) {
-        std::cout << "\033[1;36m║\033[0m               \033[1;33m↑\033[0m                      \033[1;36m║\033[0m\n";
+        std::cout << "\033[1;36m║\033[0m                  \033[1;33m↑\033[0m                   \033[1;36m║\033[0m\n";
     } else {
         std::cout << "\033[1;36m╠══════════════════════════════════════╣\033[0m\n";
     }
@@ -360,40 +369,40 @@ void Room::display() const {
     switch (type) {
         case MONSTER_ROOM:
             if (monster && monster->isAlive()) {
-                std::cout << "\033[1;31m👹 MONSTER\033[0m    \033[1;32mΩ\033[0m";
+                std::cout << "\033[1;31m👹 MONSTER\033[0m       \033[1;32mΩ\033[0m";
             } else {
-                std::cout << "\033[1;90m💀 DEFEATED\033[0m   \033[1;32mΩ\033[0m";
+                std::cout << "\033[1;90m💀 DEFEATED\033[0m      \033[1;32mΩ\033[0m";
             }
             break;
         case TRAP_ROOM:
-            std::cout << "\033[1;33m⚠️ TRAP\033[0m       \033[1;32mΩ\033[0m";
+            std::cout << "\033[1;33m⚠️ TRAP\033[0m          \033[1;32mΩ\033[0m";
             break;
         case TREASURE_ROOM:
             if (treasure) {
-                std::cout << "\033[1;33m💰 GOLD\033[0m       \033[1;32mΩ\033[0m";
+                std::cout << "\033[1;33m💰 GOLD\033[0m          \033[1;32mΩ\033[0m";
             } else {
-                std::cout << "\033[1;90m📦 EMPTY\033[0m      \033[1;32mΩ\033[0m";
+                std::cout << "\033[1;90m📦 EMPTY\033[0m         \033[1;32mΩ\033[0m";
             }
             break;
         case ENTRANCE:
-            std::cout << "\033[1;32m🏠 START\033[0m      \033[1;32mΩ\033[0m";
+            std::cout << "\033[1;32m🏠 START\033[0m         \033[1;32mΩ\033[0m";
             break;
         case EXIT:
-            std::cout << "\033[1;36m🚪 EXIT\033[0m       \033[1;32mΩ\033[0m";
+            std::cout << "\033[1;36m🚪 EXIT\033[0m          \033[1;32mΩ\033[0m";
             break;
         default:
-            std::cout << "              \033[1;32mΩ\033[0m";
+            std::cout << "                 \033[1;32mΩ\033[0m";
     }
     
     if (eastOpen) {
-        std::cout << "                      \033[1;33m→\033[0m\n";
+        std::cout << "                   \033[1;33m→\033[0m\n";
     } else {
-        std::cout << " \033[1;36m                     ║\033[0m\n";
+        std::cout << " \033[1;36m                  ║\033[0m\n";
     }
     
     // Bottom border with south exit
     if (southOpen) {
-        std::cout << "\033[1;36m║\033[0m               \033[1;33m↓\033[0m                      \033[1;36m║\033[0m\n";
+        std::cout << "\033[1;36m║\033[0m                  \033[1;33m↓\033[0m                   \033[1;36m║\033[0m\n";
     } else {
         std::cout << "\033[1;36m╠══════════════════════════════════════╣\033[0m\n";
     }
@@ -926,6 +935,14 @@ void Room::applyRoomEffect(Player& player) {
                 }
             }
             break;
+
+            case ENTRANCE:
+                // no announcement banner for entrance rooms
+                break;
+
+            case EMPTY:
+                // no announcement banner for empty rooms
+                break;
     }
 }
 
